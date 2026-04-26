@@ -6,11 +6,13 @@ type ImageGridProps = {
 };
 
 export default function ImageGrid({ images }: ImageGridProps) {
+  const displayImages = images.slice(0, 3);
+  
   return (
     <section className="bg-primaryRed py-6 md:py-10">
       <div className="container-elegant">
-        <div className="grid grid-cols-3 gap-2 md:gap-5">
-          {images.slice(0, 3).map((image) => (
+        <div className="grid grid-cols-1 gap-3 md:grid-cols-3 md:gap-5">
+          {displayImages.map((image) => (
             <ImagePlaceholder
               key={image.src}
               src={image.src}
