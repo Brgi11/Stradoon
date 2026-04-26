@@ -95,7 +95,7 @@ export default function CocktailMenuPage() {
         </div>
         <div className="container-elegant relative z-10">
           <div className="text-center">
-            <ScriptHeading className="mt-3 text-ivory md:text-7xl">
+            <ScriptHeading className="mt-3 text-white md:text-7xl">
               {lang === "hr" ? "KOKTELI" : "COCKTAILS"}
             </ScriptHeading>
             <div className="mx-auto mt-5 h-px w-28 bg-ivory/40 md:w-36" />
