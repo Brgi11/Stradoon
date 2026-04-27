@@ -13,7 +13,7 @@ export default function BreakfastMenuPage() {
   return (
     <>
       <HeroBanner
-        title={lang === "hr" ? "Istraži meni" : "Explore Menu"}
+        title="Breakfast Couture"
         videoSrc="/images/Video web-2.mp4"
         imageAlt="Breakfast Menu"
         imageLabel="Breakfast Menu"

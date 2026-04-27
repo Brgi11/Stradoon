@@ -1,9 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import Image from "next/image";
-import HeroBanner from "@/components/HeroBanner";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
+import HeroBanner from "@/components/HeroBanner";
 import ScriptHeading from "@/components/ScriptHeading";
 import { cocktailMenuItems, cocktailMenuContent } from "@/data/content";
 import { useLanguage } from "@/components/LanguageContext";
@@ -99,29 +97,29 @@ export default function CocktailMenuPage() {
 
       <section className="bg-primaryRed py-6 md:py-10">
         <div className="container-elegant">
-          <div className="flex h-64 gap-3 overflow-x-auto pb-2 md:h-96 md:flex-row md:justify-center md:gap-6 md:overflow-visible md:pb-0">
-            <div className="flex-shrink-0 md:flex-shrink">
+          <div className="flex gap-3 overflow-x-auto pb-2 md:grid md:grid-cols-3 md:gap-5 md:overflow-visible md:pb-0">
+            <div className="flex-shrink-0">
               <ImagePlaceholder
                 src="/images/IMG_4435.jpg"
                 label="Cocktail image 1"
                 alt="Cocktail image 1"
-                className="h-full w-64 shadow-[0_8px_24px_rgba(0,0,0,0.22)] md:w-80"
+                className="aspect-[4/5] w-64 shadow-[0_8px_24px_rgba(0,0,0,0.22)] md:w-auto"
               />
             </div>
-            <div className="flex-shrink-0 md:flex-shrink">
+            <div className="flex-shrink-0">
               <ImagePlaceholder
                 src="/images/IMG_4449.jpg"
                 label="Cocktail image 2"
                 alt="Cocktail image 2"
-                className="h-full w-64 shadow-[0_8px_24px_rgba(0,0,0,0.22)] md:w-80"
+                className="aspect-[4/5] w-64 shadow-[0_8px_24px_rgba(0,0,0,0.22)] md:w-auto"
               />
             </div>
-            <div className="flex-shrink-0 md:flex-shrink">
+            <div className="flex-shrink-0">
               <ImagePlaceholder
                 src="/images/IMG_4443.jpg"
                 label="Cocktail image 3"
                 alt="Cocktail image 3"
-                className="h-full w-64 shadow-[0_8px_24px_rgba(0,0,0,0.22)] md:w-80"
+                className="aspect-[4/5] w-64 shadow-[0_8px_24px_rgba(0,0,0,0.22)] md:w-auto"
               />
             </div>
           </div>
