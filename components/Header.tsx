@@ -19,7 +19,7 @@ const socialItems = [
     Icon: FacebookIcon
   },
   { label: "Instagram", href: "https://www.instagram.com/stradoon/", Icon: InstagramIcon },
-  { label: "TikTok", href: "https://www.tiktok.com/", Icon: TikTokIcon }
+  { label: "Email", href: "mailto:stradoon@juznivjetar.com", Icon: EmailIcon }
 ];
 
 function FacebookIcon(props: SVGProps<SVGSVGElement>) {
@@ -40,10 +40,11 @@ function InstagramIcon(props: SVGProps<SVGSVGElement>) {
   );
 }
 
-function TikTokIcon(props: SVGProps<SVGSVGElement>) {
+function EmailIcon(props: SVGProps<SVGSVGElement>) {
   return (
-    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
-      <path d="M15.64 4h2.73c.18 1.54 1.09 2.96 2.46 3.64v2.78a7.3 7.3 0 0 1-2.44-.42v5.08a5.63 5.63 0 1 1-5.63-5.63c.26 0 .53.02.78.06v2.86a2.75 2.75 0 0 0-.78-.11 2.82 2.82 0 1 0 2.88 2.82V4z" />
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
+      <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" strokeWidth="1.8" />
+      <path d="M3 7l9 6 9-6" stroke="currentColor" strokeWidth="1.8" />
     </svg>
   );
 }

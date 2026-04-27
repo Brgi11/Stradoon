@@ -13,54 +13,48 @@ export type MenuItemData = {
 };
 
 export const imageAssets = {
-  // Replace these src paths with real images in /public/images while keeping filenames stable.
-  heroItalianClub: {
-    src: "/images/breakfast 1.jpg",
-    alt: "The Italian Club hero image",
-    label: "Hero image - The Italian Club"
+  heroImage: {
+    src: "/images/hero.jpg",
+    alt: "Stradoon hero image",
+    label: "Hero image"
   },
-  chefMarco: {
-    src: "/images/breakfast 1.jpg",
-    alt: "Portrait of chef Marco Esposito",
-    label: "Chef portrait - Marco Esposito"
-  },
-  pastaGrid: [
+  firstRowImages: [
     {
-      src: "/images/breakfast 1.jpg",
-      alt: "Breakfast plate detail 1",
-      label: "Breakfast image 1"
+      src: "/images/firstRowFirstImage.jpg",
+      alt: "First row image 1",
+      label: "First row image 1"
     },
     {
-      src: "/images/Breakfast 2.jpg",
-      alt: "Breakfast plate detail 2",
-      label: "Breakfast image 2"
+      src: "/images/firstRowSecondImage.jpg",
+      alt: "First row image 2",
+      label: "First row image 2"
     },
     {
-      src: "/images/Breakfast 3.jpg",
-      alt: "Breakfast plate detail 3",
-      label: "Breakfast image 3"
+      src: "/images/firstRowThirdImage.jpg",
+      alt: "First row image 3",
+      label: "First row image 3"
     }
   ] as ImageAsset[],
-  breakfastHero: {
-    src: "/images/breakfast-hero.jpg",
-    alt: "Breakfast couture hero image",
-    label: "Breakfast hero image"
+  artOfStradoonImage: {
+    src: "/images/The art of.jpg",
+    alt: "The Art of Stradoon",
+    label: "The Art of Stradoon"
   },
-  breakfastGrid: [
+  secondRowImages: [
     {
-      src: "/images/breakfast 1.jpg",
-      alt: "Breakfast plate",
-      label: "Breakfast plate 1"
+      src: "/images/secondRowFirstImage.jpg",
+      alt: "Second row image 1",
+      label: "Second row image 1"
     },
     {
-      src: "/images/Breakfast 2.jpg",
-      alt: "Brunch table arrangement",
-      label: "Breakfast plate 2"
+      src: "/images/secondRowSecondImage.jpg",
+      alt: "Second row image 2",
+      label: "Second row image 2"
     },
     {
-      src: "/images/Breakfast 3.jpg",
-      alt: "View of Dubrovnik while dining",
-      label: "Breakfast plate 3"
+      src: "/images/secondRowThirdImage.jpg",
+      alt: "Second row image 3",
+      label: "Second row image 3"
     }
   ] as ImageAsset[],
   mapPlaceholder: {
@@ -71,32 +65,28 @@ export const imageAssets = {
 };
 
 export const homepageContent = {
-  // Centralized homepage text content. Edit here for future copy updates.
-  heroTitle: "The Italian Club",
-  introText:
-    "U kuhinji pričamo talijanski, kuhamo talijanski. koristimo isključivo namirnice koje stižu iz Italije, a sva naša tjestenina je fatto a mano, ručno rađena po receptu talijanskog kuhara Marco Esposito koji je glavna zvijezda restorana.",
-  maestroHeading: "Incontra il Maestro",
-  maestroBodyParagraphs: [
-    "Marco Esposito, rodom iz Italije, svoju je kulinarsku filozofiju klesao u najboljim talijanskim kuhinjama diljem svijeta. Nakon godina vođenja prestižnih restorana, od kojih je zadnja postaja bila blještavi Miami, odlučio je svoju strast i znanje donijeti upravo ovdje u Dubrovnik.",
-    "Nije došao sam, sa sobom je doveo tim talijanskih stručnjaka koji u našoj kuhinji dišu, pričaju i stvaraju kao jedan. Svaki tanjur koji izađe pred vas nosi njegov potpis, autentični recept i iskustvo stečeno na svjetskoj gastronomskoj mapi."
+  heroSubtitle: "Welcome",
+  heroTitle: "Martini & Restaurant",
+  introTextHr:
+    "Mjesto gdje se povijest susreće s modernim užitkom. Od prvih jutarnjih zraka sunca na Stradunu do elegantnih večeri uz Martini, dobrodošli u naš svijet.",
+  introTextEn:
+    "A place where history meets modern pleasure. From the first morning rays of sun on Stradoon to elegant evenings with Martini, welcome to our world.",
+  artOfStradoonHeading: "The Art of",
+  artOfStradoonHeadingAccent: "Stradoon",
+  artOfStradoonTextHr: [
+    "Stradoon nije samo adresa, već tradicija koja se neprestano razvija. Kao prvi Martini bar u Hrvatskoj i omiljeno okupljalište s pogledom na crkvu sv. Vlaha, godinama gradimo priču temeljenu na iznimnoj lokaciji i beskompromisnoj kvaliteti.",
+    "Danas, Stradoon stoji na pragu nove ere. Spajajući modernu gastronomiju i vrhunske namirnice, specijalizirali smo se za ranojutarnje rituale kroz naš Breakfast Couture koncept te signature Martini koktele koji su postali simbol dubrovačkih večeri. Naš restoran je mjesto gdje se susreću elegancije i opuštenosti."
   ],
-  pastaFeatureHeading: "La nostra pasta fatta a mano",
-  pastaFeatureSubheading: "Naša ručno rađena tjestenina.",
-  pastaFeatureBody: [
-    "Vjerujemo da se prava talijanska priča ne može ispričati bez izvornih namirnica. Zato smo učinili upravo to, donijeli smo Italiju k vama. Naši kolutovi sira, u kojima šef pred vašim očima dovršava manistru pretvarajući je u kremasto savršenstvo, stižu izravno s talijanskih imanja.",
-    "Od najfinijeg brašna za našu ručno rađenu tjesteninu do maslinovog ulja i sira, svaki sastojak ima talijansku putovnicu."
+  artOfStradoonTextEn: [
+    "Stradoon is not just an address, but a tradition that constantly evolves. As the first Martini bar in Croatia and a beloved gathering spot with a view of St. Blaise's Church, we have been building a story based on an exceptional location and uncompromising quality for years.",
+    "Today, Stradoon stands at the threshold of a new era. Combining modern gastronomy and premium ingredients, we have specialized in early morning rituals through our Breakfast Couture concept and signature Martini cocktails that have become a symbol of Dubrovnik evenings. Our restaurant is a place where elegance meets relaxation."
   ],
-  breakfastHeroTitle: "Breakfast Couture",
-  breakfastHeading: "Jutro s najljepšim pogledom na grad.",
-  breakfastBody:
-    "Prije nego što kuhinjom zavlada miris svježe manistre, Stradoon je oaza mira i vrhunskog bruncha. Naš koncept spaja najfinije sezonske namirnice s modernom prezentacijom. Izabrali smo devet autentičnih doručaka, devet vizualnih i gastronomskih remek-djela dizajniranih za početak dana. Uživajte u okusima koji prate ritam Straduna, uz jedinstven pogled na crkvu sv. Vlaha koji svako jutro čini nezaboravnim.",
   contactHeading: "Find us:",
   email: "stradoon@juznivjetar.com",
   phone: "+385 99 3388 276"
 };
 
 export const breakfastMenuItems: MenuItemData[] = [
-  // Breakfast menu items (HR + EN). Add, remove, or reorder as needed.
   {
     name: "FALAFEL FIESTA",
     price: "€ 13.00",
@@ -161,7 +151,7 @@ export const breakfastMenuItems: MenuItemData[] = [
       "Pancakes with maple syrup, raspberry coulis, caramelized banana, seasonal fruit and vanilla ice cream."
   },
   {
-    name: "HONEY, I’M FLAKY!",
+    name: "HONEY, I'M FLAKY!",
     price: "€ 14.00",
     imageSrc: "/images/8. Honey, I'm Flaky.jpg",
     hrDescription:
@@ -204,195 +194,190 @@ export const cocktailMenuContent = {
 };
 
 export const cocktailMenuItems: MenuItemData[] = [
-  // BRUNCH
   {
-    name: "MARTINI FIERO & TONIC",
+    name: "Martini Fiero & Tonic",
     price: "12.00 €",
-    hrDescription: "MARTINI FIERO, SCHWEPPES TONIC WATER",
-    enDescription: "MARTINI FIERO, SCHWEPPES TONIC WATER"
+    hrDescription: "Martini Fiero, Schweppes Tonic Water",
+    enDescription: "Martini Fiero, Schweppes Tonic Water"
   },
   {
-    name: "MANGO SAPPHIRE",
+    name: "Mango Sapphire",
     price: "12.00 €",
-    hrDescription: "BOMBAY SAPPHIRE GIN, LIME JUICE, HOMEMADE MANGO-TURMERIC AND CHILLY SYRUP, SCHWEPPES TONIC WATER",
-    enDescription: "BOMBAY SAPPHIRE GIN, LIME JUICE, HOMEMADE MANGO-TURMERIC AND CHILLY SYRUP, SCHWEPPES TONIC WATER"
+    hrDescription: "Bombay Sapphire Gin, Lime Juice, Homemade Mango-Turmeric and Chilly Syrup, Schweppes Tonic Water",
+    enDescription: "Bombay Sapphire Gin, Lime Juice, Homemade Mango-Turmeric and Chilly Syrup, Schweppes Tonic Water"
   },
   {
-    name: "MINT TWIST",
+    name: "Mint Twist",
     price: "12.00 €",
-    hrDescription: "FINLANDIA VODKA, HOMEMADE MINT SYRUP, SCHWEPPES TONIC WATER",
-    enDescription: "FINLANDIA VODKA, HOMEMADE MINT SYRUP, SCHWEPPES TONIC WATER"
+    hrDescription: "Finlandia Vodka, Homemade Mint Syrup, Schweppes Tonic Water",
+    enDescription: "Finlandia Vodka, Homemade Mint Syrup, Schweppes Tonic Water"
   },
   {
-    name: "STRADOON MIMOSA",
+    name: "Stradoon Mimosa",
     price: "12.00 €",
-    hrDescription: "ORANGE JUICE, MARTINI PROSECCO",
-    enDescription: "ORANGE JUICE, MARTINI PROSECCO"
+    hrDescription: "Orange Juice, Martini Prosecco",
+    enDescription: "Orange Juice, Martini Prosecco"
   },
   {
-    name: "HUGO",
+    name: "Hugo",
     price: "14.00 €",
-    hrDescription: "ST. GERMAIN ELDERFLOWER LIQUEUR, LIME, MINT, MARTINI PROSECCO",
-    enDescription: "ST. GERMAIN ELDERFLOWER LIQUEUR, LIME, MINT, MARTINI PROSECCO"
+    hrDescription: "St. Germain Elderflower Liqueur, Lime, Mint, Martini Prosecco",
+    enDescription: "St. Germain Elderflower Liqueur, Lime, Mint, Martini Prosecco"
   },
   {
-    name: "APEROL SPRITZ",
+    name: "Aperol Spritz",
     price: "14.00 €",
-    hrDescription: "MARTINI PROSECCO, APEROL, SPLASH SODA",
-    enDescription: "MARTINI PROSECCO, APEROL, SPLASH SODA"
+    hrDescription: "Martini Prosecco, Aperol, Splash Soda",
+    enDescription: "Martini Prosecco, Aperol, Splash Soda"
   },
-  // NON ALCOHOLIC BRUNCH
   {
-    name: "FLOREALE TONIC",
+    name: "Floreale Tonic",
     price: "10.00 €",
-    hrDescription: "MARTINI FLOREALE, SCHWEPPES TONIC WATER",
-    enDescription: "MARTINI FLOREALE, SCHWEPPES TONIC WATER"
+    hrDescription: "Martini Floreale, Schweppes Tonic Water",
+    enDescription: "Martini Floreale, Schweppes Tonic Water"
   },
   {
-    name: "VIBRANTE TONIC",
+    name: "Vibrante Tonic",
     price: "10.00 €",
-    hrDescription: "MARTINI VIBRANTE, SCHWEPPES TONIC WATER",
-    enDescription: "MARTINI VIBRANTE, SCHWEPPES TONIC WATER"
+    hrDescription: "Martini Vibrante, Schweppes Tonic Water",
+    enDescription: "Martini Vibrante, Schweppes Tonic Water"
   },
-  // Bond's Bar
   {
-    name: "ESPRESSO MARTINI",
+    name: "Espresso Martini",
     price: "14.50 €",
-    hrDescription: "FINLANDIA VODKA, KAHLUA, SHOT ESPRESSO, HONEY",
-    enDescription: "FINLANDIA VODKA, KAHLUA, SHOT ESPRESSO, HONEY"
+    hrDescription: "Finlandia Vodka, Kahlua, Shot Espresso, Honey",
+    enDescription: "Finlandia Vodka, Kahlua, Shot Espresso, Honey"
   },
   {
-    name: "MARTINI ROYALE",
+    name: "Martini Royale",
     price: "14.00 €",
-    hrDescription: "BOMBAY SAPPHIRE GIN/FINLANDIA VODKA, MARTINI EXTRA DRY, OLIVES",
-    enDescription: "BOMBAY SAPPHIRE GIN/FINLANDIA VODKA, MARTINI EXTRA DRY, OLIVES"
+    hrDescription: "Bombay Sapphire Gin/Finlandia Vodka, Martini Extra Dry, Olives",
+    enDescription: "Bombay Sapphire Gin/Finlandia Vodka, Martini Extra Dry, Olives"
   },
   {
-    name: "THE BONDHATTAN",
+    name: "The Bondhattan",
     price: "16.00 €",
-    hrDescription: "WOODFORD RESERVE BOURBON, MARTINI ROSSO, DASH ANGOSTURA",
-    enDescription: "WOODFORD RESERVE BOURBON, MARTINI ROSSO, DASH ANGOSTURA"
+    hrDescription: "Woodford Reserve Bourbon, Martini Rosso, Dash Angostura",
+    enDescription: "Woodford Reserve Bourbon, Martini Rosso, Dash Angostura"
   },
   {
-    name: "ANGOSTURA NEGRONI",
+    name: "Angostura Negroni",
     price: "15.00 €",
-    hrDescription: "BOMBAY SAPPHIRE GIN, MARTINI RISERVA SPECIALE BITTER, MARTINI ROSSO, DASH ANGOSTURA",
-    enDescription: "BOMBAY SAPPHIRE GIN, MARTINI RISERVA SPECIALE BITTER, MARTINI ROSSO, DASH ANGOSTURA"
+    hrDescription: "Bombay Sapphire Gin, Martini Riserva Speciale Bitter, Martini Rosso, Dash Angostura",
+    enDescription: "Bombay Sapphire Gin, Martini Riserva Speciale Bitter, Martini Rosso, Dash Angostura"
   },
   {
-    name: "OCHO OLD FASHIONED",
+    name: "Ocho Old Fashioned",
     price: "15.00 €",
-    hrDescription: "BACARDI RESERVA OCHO GOLD RUM, CARDAMOM, DASH ANGOSTURA",
-    enDescription: "BACARDI RESERVA OCHO GOLD RUM, CARDAMOM, DASH ANGOSTURA"
+    hrDescription: "Bacardi Reserva Ocho Gold Rum, Cardamom, Dash Angostura",
+    enDescription: "Bacardi Reserva Ocho Gold Rum, Cardamom, Dash Angostura"
   },
   {
-    name: "THE VESPER MULE",
+    name: "The Vesper Mule",
     price: "13.50 €",
-    hrDescription: "BACARDI CARTA ORO RUM, LIME JUICE, THREE CENTS GINGER BEER",
-    enDescription: "BACARDI CARTA ORO RUM, LIME JUICE, THREE CENTS GINGER BEER"
+    hrDescription: "Bacardi Carta Oro Rum, Lime Juice, Three Cents Ginger Beer",
+    enDescription: "Bacardi Carta Oro Rum, Lime Juice, Three Cents Ginger Beer"
   },
   {
-    name: "THE GREENFINGER",
+    name: "The Greenfinger",
     price: "14.00 €",
-    hrDescription: "BOMBAY SAPPHIRE GIN, LIME, ST. GERMAIN ELDERFLOWER LIQUEUR, BASIL, LIME JUICE",
-    enDescription: "BOMBAY SAPPHIRE GIN, LIME, ST. GERMAIN ELDERFLOWER LIQUEUR, BASIL, LIME JUICE"
+    hrDescription: "Bombay Sapphire Gin, Lime, St. Germain Elderflower Liqueur, Basil, Lime Juice",
+    enDescription: "Bombay Sapphire Gin, Lime, St. Germain Elderflower Liqueur, Basil, Lime Juice"
   },
   {
-    name: "CUCUMBER CONFIDENTIAL",
+    name: "Cucumber Confidential",
     price: "13.50 €",
-    hrDescription: "FINLANDIA VODKA, LEMON JUICE, SUGAR, MINT, CUCUMBER, SODA",
-    enDescription: "FINLANDIA VODKA, LEMON JUICE, SUGAR, MINT, CUCUMBER, SODA"
+    hrDescription: "Finlandia Vodka, Lemon Juice, Sugar, Mint, Cucumber, Soda",
+    enDescription: "Finlandia Vodka, Lemon Juice, Sugar, Mint, Cucumber, Soda"
   },
   {
-    name: "THE BONDITO MULE",
+    name: "The Bondito Mule",
     price: "14.00 €",
-    hrDescription: "EL JIMADOR BLANCO TEQUILA, LIME JUICE, AGAVA SYRUP, THREE CENTS GINGER BEER",
-    enDescription: "EL JIMADOR BLANCO TEQUILA, LIME JUICE, AGAVA SYRUP, THREE CENTS GINGER BEER"
+    hrDescription: "El Jimador Blanco Tequila, Lime Juice, Agave Syrup, Three Cents Ginger Beer",
+    enDescription: "El Jimador Blanco Tequila, Lime Juice, Agave Syrup, Three Cents Ginger Beer"
   },
   {
-    name: "THE BONDSTAR MARTINI",
+    name: "The Bondstar Martini",
     price: "15.00 €",
-    hrDescription: "FINLANDIA VODKA, PASSION FRUIT PUREE, PASSOA, LIME JUICE, VANILLA SYRUP, MARTINI PROSECCO",
-    enDescription: "FINLANDIA VODKA, PASSION FRUIT PUREE, PASSOA, LIME JUICE, VANILLA SYRUP, MARTINI PROSECCO"
+    hrDescription: "Finlandia Vodka, Passion Fruit Puree, Passoa, Lime Juice, Vanilla Syrup, Martini Prosecco",
+    enDescription: "Finlandia Vodka, Passion Fruit Puree, Passoa, Lime Juice, Vanilla Syrup, Martini Prosecco"
   },
   {
-    name: "THE MARGARITA PROTOCOL",
+    name: "The Margarita Protocol",
     price: "14.00 €",
-    hrDescription: "EL JIMADOR BLANCO TEQUILA, COINTREAU, LIME JUICE, AGAVA SYRUP",
-    enDescription: "EL JIMADOR BLANCO TEQUILA, COINTREAU, LIME JUICE, AGAVA SYRUP"
+    hrDescription: "El Jimador Blanco Tequila, Cointreau, Lime Juice, Agave Syrup",
+    enDescription: "El Jimador Blanco Tequila, Cointreau, Lime Juice, Agave Syrup"
   },
   {
-    name: "THE MOJITO REACTOR",
+    name: "The Mojito Reactor",
     price: "14.00 €",
-    hrDescription: "BACARDI CARTA BLANCA RUM, LIME, BROWN SUGAR, MINT, SPLASH SODA",
-    enDescription: "BACARDI CARTA BLANCA RUM, LIME, BROWN SUGAR, MINT, SPLASH SODA"
+    hrDescription: "Bacardi Carta Blanca Rum, Lime, Brown Sugar, Mint, Splash Soda",
+    enDescription: "Bacardi Carta Blanca Rum, Lime, Brown Sugar, Mint, Splash Soda"
   },
   {
-    name: "PALOMA ON THE RUN",
+    name: "Paloma on the Run",
     price: "14.00 €",
-    hrDescription: "PATRON SILVER TEQUILA, LIME JUICE, THREE CENTS PINK GRAPEFRUIT SODA",
-    enDescription: "PATRON SILVER TEQUILA, LIME JUICE, THREE CENTS PINK GRAPEFRUIT SODA"
+    hrDescription: "Patron Silver Tequila, Lime Juice, Three Cents Pink Grapefruit Soda",
+    enDescription: "Patron Silver Tequila, Lime Juice, Three Cents Pink Grapefruit Soda"
   },
   {
-    name: "DAIQUIRI 007",
+    name: " Daiquiri 007",
     price: "14.50 €",
-    hrDescription: "BACARDI CARTA BLANCA RUM, LIME, SUGAR",
-    enDescription: "BACARDI CARTA BLANCA RUM, LIME, SUGAR"
+    hrDescription: "Bacardi Carta Blanca Rum, Lime, Sugar",
+    enDescription: "Bacardi Carta Blanca Rum, Lime, Sugar"
   },
   {
-    name: "AGENT BOURBON",
+    name: "Agent Bourbon",
     price: "16.00 €",
-    hrDescription: "WOODFORD RESERVE BOURBON, LEMON JUICE, SIMPLE SYRUP, EGG WHITE",
-    enDescription: "WOODFORD RESERVE BOURBON, LEMON JUICE, SIMPLE SYRUP, EGG WHITE"
+    hrDescription: "Woodford Reserve Bourbon, Lemon Juice, Simple Syrup, Egg White",
+    enDescription: "Woodford Reserve Bourbon, Lemon Juice, Simple Syrup, Egg White"
   },
-  // Shooters
   {
     name: "B-52",
     price: "8.00 €",
-    hrDescription: "BAILEY'S, KAHLUA, STROH",
-    enDescription: "BAILEY'S, KAHLUA, STROH"
+    hrDescription: "Bailey's, Kahlua, Stroh",
+    enDescription: "Bailey's, Kahlua, Stroh"
   },
   {
-    name: "KAMIKAZE",
+    name: "Kamikaze",
     price: "8.00 €",
-    hrDescription: "FINLANDIA VODKA, COINTREAU, LIME JUICE",
-    enDescription: "FINLANDIA VODKA, COINTREAU, LIME JUICE"
+    hrDescription: "Finlandia Vodka, Cointreau, Lime Juice",
+    enDescription: "Finlandia Vodka, Cointreau, Lime Juice"
   },
   {
-    name: "LEMON DROP",
+    name: "Lemon Drop",
     price: "8.00 €",
-    hrDescription: "FINLANDIA VODKA, LEMON JUICE, SUGAR SYRUP",
-    enDescription: "FINLANDIA VODKA, LEMON JUICE, SUGAR SYRUP"
+    hrDescription: "Finlandia Vodka, Lemon Juice, Sugar Syrup",
+    enDescription: "Finlandia Vodka, Lemon Juice, Sugar Syrup"
   },
   {
-    name: "SLIPPERY NIPPLE",
+    name: "Slippery Nipple",
     price: "8.00 €",
-    hrDescription: "SAMBUCA, BAILEY'S, GRENADINE",
-    enDescription: "SAMBUCA, BAILEY'S, GRENADINE"
-  },
-  // Virgin
-  {
-    name: "VIRGIN FLOREALE TONIC",
-    price: "10.00 €",
-    hrDescription: "MARTINI FLOREALE, SCHWEPPES TONIC WATER",
-    enDescription: "MARTINI FLOREALE, SCHWEPPES TONIC WATER"
+    hrDescription: "Sambuca, Bailey's, Grenadine",
+    enDescription: "Sambuca, Bailey's, Grenadine"
   },
   {
-    name: "VIRGIN VIBRANTE TONIC",
+    name: "Virgin Floreale Tonic",
     price: "10.00 €",
-    hrDescription: "MARTINI VIBRANTE, SCHWEPPES TONIC WATER",
-    enDescription: "MARTINI VIBRANTE, SCHWEPPES TONIC WATER"
+    hrDescription: "Martini Floreale, Schweppes Tonic Water",
+    enDescription: "Martini Floreale, Schweppes Tonic Water"
   },
   {
-    name: "VIRGIN MOJITO",
+    name: "Virgin Vibrante Tonic",
     price: "10.00 €",
-    hrDescription: "SPRITE, LIME, PASSION PUREE, MINT",
-    enDescription: "SPRITE, LIME, PASSION PUREE, MINT"
+    hrDescription: "Martini Vibrante, Schweppes Tonic Water",
+    enDescription: "Martini Vibrante, Schweppes Tonic Water"
   },
   {
-    name: "CINDERELLA",
+    name: "Virgin Mojito",
     price: "10.00 €",
-    hrDescription: "ORANGE JUICE, PINEAPPLE JUICE, LEMON JUICE, GRENADINE, THREE CENTS GINGER BEER",
-    enDescription: "ORANGE JUICE, PINEAPPLE JUICE, LEMON JUICE, GRENADINE, THREE CENTS GINGER BEER"
+    hrDescription: "Sprite, Lime, Passion Puree, Mint",
+    enDescription: "Sprite, Lime, Passion Puree, Mint"
+  },
+  {
+    name: "Cinderella",
+    price: "10.00 €",
+    hrDescription: "Orange Juice, Pineapple Juice, Lemon Juice, Grenadine, Three Cents Ginger Beer",
+    enDescription: "Orange Juice, Pineapple Juice, Lemon Juice, Grenadine, Three Cents Ginger Beer"
   }
 ];

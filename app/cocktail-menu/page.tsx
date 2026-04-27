@@ -1,38 +1,12 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
+import HeroBanner from "@/components/HeroBanner";
+import ImagePlaceholder from "@/components/ImagePlaceholder";
 import ScriptHeading from "@/components/ScriptHeading";
-import { cocktailMenuItems, cocktailMenuContent } from "@/data/content";
+import { cocktailMenuItems } from "@/data/content";
 import { useLanguage } from "@/components/LanguageContext";
-
-function DecorativeImage({ src, alt, className }: { src: string; alt: string; className?: string }) {
-  return (
-    <div className={`relative overflow-hidden rounded-xl border border-ivory/20 ${className || ""}`}>
-      <Image
-        src={src}
-        alt={alt}
-        fill
-        className="object-cover"
-        sizes="(max-width: 768px) 100vw, 33vw"
-      />
-    </div>
-  );
-}
-
-const allImages = [
-  "/images/9.jpg",
-  "/images/11.jpg",
-  "/images/13.jpg",
-  "/images/15.jpg",
-  "/images/17.jpg",
-  "/images/18.jpg",
-  "/images/20.jpg",
-  "/images/21.jpg"
-];
-
-function getRandomImage(index: number) {
-  return allImages[index % allImages.length];
-}
 
 function MenuCategory({ title, items, language, textColor = "ivory" }: { title: string; items: typeof cocktailMenuItems; language: "hr" | "en"; textColor?: string }) {
   const textClass = textColor === "dark" ? "text-deepText" : "text-ivory";
@@ -86,118 +60,98 @@ export default function CocktailMenuPage() {
   return (
     <>
       <section className="relative min-h-[50vh] bg-primaryRed pt-24 pb-16 md:pt-32 md:pb-20">
-        <div className="absolute inset-0 opacity-25">
-          <DecorativeImage
-            src={getRandomImage(0)}
-            alt="Cocktail decor"
-            className="h-full w-full"
-          />
+        <div className="absolute inset-0">
+          <video
+            className="size-full object-cover opacity-30"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+          >
+            <source src="/images/video 2.mp4" type="video/mp4" />
+          </video>
         </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
         <div className="container-elegant relative z-10">
           <div className="text-center">
             <ScriptHeading className="mt-3 text-white md:text-7xl">
-              {lang === "hr" ? "KOKTELI" : "COCKTAILS"}
+              Liquid Couture
             </ScriptHeading>
             <div className="mx-auto mt-5 h-px w-28 bg-ivory/40 md:w-36" />
-            <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-ivory/90 md:text-xl">
+            <div className="mt-6">
+              <p className="text-xs uppercase tracking-[0.45em] text-ivory/70 md:text-sm">
+                {lang === "hr" ? "Jutro. Dan. Večer." : "Morning. Noon. Night."}
+              </p>
+            </div>
+            <h3 className="mt-4 font-cardo text-xl font-semibold tracking-wide text-white md:text-3xl">
+              Martini & Mixology
+            </h3>
+            <div className="mx-auto mt-5 h-px w-28 bg-ivory/40 md:w-36" />
+            <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-ivory/90 md:text-xl">
               {lang === "hr"
-                ? "Iskreno pripremljeni kokteli za posebne trenutke. Od klasičnih do kreativnih mješavina, svaki je dizajniran da transformationira vaš doživljaj."
-                : "Sincere prepared cocktails for special moments. From classic to creative blends, each designed to transform your experience."}
+                ? "Umijeće miksologije bez vremenskih ograničenja. Uživajte u našim signature koktelima i osvježavajućim bezalkoholnim kreacijama, od jutarnjeg bruncha do elegantnih večeri na Stradunu."
+                : "The art of mixology with no time constraints. Enjoy our signature cocktails and refreshing non-alcoholic creations, from morning brunch to elegant evenings on Stradoon."}
             </p>
           </div>
         </div>
       </section>
 
-      <div className="bg-primaryRed">
+      <section className="bg-primaryRed py-6 md:py-10">
         <div className="container-elegant">
-          <div className="grid gap-6 py-8 md:grid-cols-3 md:gap-8 md:py-12">
-            <div className="md:col-span-1">
-              <DecorativeImage
-                src={getRandomImage(1)}
-                alt="Cocktail decor 1"
-                className="aspect-[3/4] rounded-xl"
-              />
-            </div>
-            <div className="md:col-span-2">
-              <MenuCategory title={lang === "hr" ? "BRUNCH" : "BRUNCH"} items={brunchItems} language={lang} />
-              <MenuCategory
-                title={lang === "hr" ? "BEZ ALKOHOLA" : "NON-ALCOHOLIC"}
-                items={nonAlcoholItems}
-                language={lang}
-              />
-            </div>
+          <div className="flex h-64 flex-col gap-4 md:h-96 md:flex-row md:justify-center md:gap-6">
+            <ImagePlaceholder
+              src="/images/IMG_4435.jpg"
+              label="Cocktail image 1"
+              alt="Cocktail image 1"
+              className="h-full w-full shadow-[0_8px_24px_rgba(0,0,0,0.22)] md:w-80"
+            />
+            <ImagePlaceholder
+              src="/images/IMG_4449.jpg"
+              label="Cocktail image 2"
+              alt="Cocktail image 2"
+              className="h-full w-full shadow-[0_8px_24px_rgba(0,0,0,0.22)] md:w-80"
+            />
+            <ImagePlaceholder
+              src="/images/IMG_4443.jpg"
+              label="Cocktail image 3"
+              alt="Cocktail image 3"
+              className="h-full w-full shadow-[0_8px_24px_rgba(0,0,0,0.22)] md:w-80"
+            />
           </div>
         </div>
-      </div>
+      </section>
 
-      <section className="relative overflow-hidden bg-ivory py-16 md:py-24">
-        <div className="absolute inset-0 opacity-15">
-          <DecorativeImage
-            src={getRandomImage(2)}
-            alt="Bar decor"
-            className="h-full w-full"
-          />
+      <section className="bg-primaryRed py-16 md:py-24">
+        <div className="container-elegant">
+          <div className="mb-8 md:mb-12">
+            <MenuCategory title={lang === "hr" ? "Brunch" : "Brunch"} items={brunchItems} language={lang} />
+            <MenuCategory title={lang === "hr" ? "Bez alkohola" : "Non-alcoholic"} items={nonAlcoholItems} language={lang} />
+          </div>
         </div>
-        <div className="container-elegant relative z-10">
-          <ScriptHeading className="text-center text-primaryRed md:text-7xl">
-            {lang === "hr" ? '"Bondov Bar"' : cocktailMenuContent.bondBarTitle[lang]}
-          </ScriptHeading>
+      </section>
+
+      <section className="bg-ivory py-16 md:py-24">
+        <div className="container-elegant">
+          <h2 className="text-center font-script text-3xl text-primaryRed md:text-5xl">
+            {lang === "hr" ? '"Bondov Bar"' : "Bond's Bar"}
+          </h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-base leading-relaxed text-deepText/90 md:text-lg">
             {lang === "hr"
               ? "SHAKEN, NOT STIRRED - Ikonični kokteli po receptu Jamesovog menija."
               : "SHAKEN, NOT STIRRED - Iconic cocktails from James' secret menu."}
           </p>
-          <div className="grid gap-6 md:grid-cols-2 md:gap-8">
-            <div className="relative mt-8 h-fit md:sticky md:top-24">
-              <DecorativeImage
-                src={getRandomImage(3)}
-                alt="Bond cocktail"
-                className="aspect-square rounded-xl"
-              />
-            </div>
-            <div className="mt-8 rounded-2xl border border-primaryRed/20 bg-white/80 p-6 shadow-sm">
-              <MenuCategory title="" items={bondBarItems} language={lang} textColor="dark" />
-            </div>
+          <div className="mt-8 rounded-none border border-primaryRed/20 bg-white/80 p-6 shadow-sm">
+            <MenuCategory title="" items={bondBarItems} language={lang} textColor="dark" />
           </div>
         </div>
       </section>
 
-      <div className="bg-primaryRed">
+      <section className="bg-primaryRed py-12 md:py-16">
         <div className="container-elegant">
-          <div className="grid gap-6 py-8 md:grid-cols-3 md:gap-8 md:py-12">
-            <div className="md:col-span-2">
-              <MenuCategory title={lang === "hr" ? "ŠUTERI" : "SHOOTERS"} items={shootersItems} language={lang} />
-              <MenuCategory title={lang === "hr" ? "DEVIRGIN" : "VIRGIN"} items={virginItems} language={lang} />
-            </div>
-            <div className="md:col-span-1">
-              <DecorativeImage
-                src={getRandomImage(4)}
-                alt="Cocktail decor 2"
-                className="aspect-[3/4] rounded-xl"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <section className="bg-ivory py-12 md:py-16">
-        <div className="container-elegant">
-          <div className="grid gap-4 md:grid-cols-3 md:gap-6">
-            <DecorativeImage
-              src={getRandomImage(5)}
-              alt="Decoration"
-              className="aspect-[4/3] rounded-lg"
-            />
-            <DecorativeImage
-              src={getRandomImage(6)}
-              alt="Decoration"
-              className="aspect-[4/3] rounded-lg"
-            />
-            <DecorativeImage
-              src={getRandomImage(7)}
-              alt="Decoration"
-              className="aspect-[4/3] rounded-lg"
-            />
+          <div className="mb-8 md:mb-12">
+            <MenuCategory title={lang === "hr" ? "Šuteri" : "Shooters"} items={shootersItems} language={lang} />
+            <MenuCategory title={lang === "hr" ? "Bezalkoholni" : "Virgin"} items={virginItems} language={lang} />
           </div>
         </div>
       </section>

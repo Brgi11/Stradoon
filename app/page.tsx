@@ -1,14 +1,36 @@
 "use client";
 
 import HeroBanner from "@/components/HeroBanner";
-import ImageGrid from "@/components/ImageGrid";
+import Image from "next/image";
 import ScriptHeading from "@/components/ScriptHeading";
 import SectionTitle from "@/components/SectionTitle";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import CTAButton from "@/components/CTAButton";
+import { ReserveButton } from "@/components/CTAButton";
 import ContactSection from "@/components/ContactSection";
 import { homepageContent, imageAssets } from "@/data/content";
 import { useLanguage } from "@/components/LanguageContext";
+
+function HorizontalScrollGrid({ images }: { images: typeof imageAssets.firstRowImages }) {
+  return (
+    <section className="bg-primaryRed py-6 md:py-10">
+      <div className="container-elegant">
+        <div className="flex gap-3 overflow-x-auto pb-2 md:grid md:grid-cols-3 md:gap-5 md:overflow-visible md:pb-0">
+          {images.map((image) => (
+            <div key={image.src} className="flex-shrink-0 md:flex-shrink">
+              <ImagePlaceholder
+                src={image.src}
+                label={image.label}
+                alt={image.alt}
+                className="aspect-[4/5] w-64 shadow-[0_8px_24px_rgba(0,0,0,0.22)] md:w-auto"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export default function HomePage() {
   const { language } = useLanguage();
@@ -17,53 +39,45 @@ export default function HomePage() {
   return (
     <>
       <HeroBanner
-        title={lang === "hr" ? "The Italian Club" : homepageContent.heroTitle}
-        imageLabel={imageAssets.heroItalianClub.label}
-        imageAlt={imageAssets.heroItalianClub.alt}
-        videoSrc="/images/Video web-2.mp4"
+        title={lang === "hr" ? "Dobrodošli" : "Welcome"}
+        imageLabel={imageAssets.heroImage.label}
+        imageAlt={imageAssets.heroImage.alt}
+        imageSrc="/images/hero.jpg"
       />
 
       <section className="section-padding bg-ivory">
         <div className="container-elegant">
           <div className="mx-auto my-6 max-w-[64ch] text-center text-lg leading-relaxed text-deepText/95 md:my-10 md:text-2xl">
             <p>
-              {lang === "hr"
-                ? "U kuhinji pričamo talijanski, kuhamo talijanski. koristimo isključivo namirnice koje stižu iz Italije, a sva naša tjestenina je fatto a mano, ručno rađena po receptu talijanskog kuhara Marco Esposito koji je glavna zvijezda restorana."
-                : "In the kitchen we speak Italian, we cook Italian. We use exclusively ingredients that come from Italy, and all our pasta is fatto a mano, hand-made according to the recipe of Italian chef Marco Esposito who is the main star of the restaurant."}
+              {lang === "hr" ? homepageContent.introTextHr : homepageContent.introTextEn}
             </p>
           </div>
         </div>
       </section>
 
-      <ImageGrid images={imageAssets.pastaGrid} />
+      <HorizontalScrollGrid images={imageAssets.firstRowImages} />
 
       <section className="section-padding bg-ivory">
         <div className="container-elegant">
           <div className="grid items-center gap-8 md:grid-cols-2 md:gap-12">
             <ImagePlaceholder
-              src="/images/breakfast 1.jpg"
-              label={imageAssets.chefMarco.label}
-              alt={imageAssets.chefMarco.alt}
+              src={imageAssets.artOfStradoonImage.src}
+              label={imageAssets.artOfStradoonImage.label}
+              alt={imageAssets.artOfStradoonImage.alt}
               className="aspect-[4/5]"
             />
             <div className="space-y-4 text-right">
               <div className="font-script leading-none text-primaryRed">
                 <p className="text-5xl md:text-6xl">
-                  {lang === "hr" ? "Incontra il" : "Meet the"}
+                  {homepageContent.artOfStradoonHeading}
                 </p>
-                <p className="-mt-1 text-7xl md:-mt-2 md:text-8xl">
-                  {lang === "hr" ? "Maestro" : "Maestro"}
+                <p className="-mt-1 text-6xl md:-mt-2 md:text-8xl">
+                  {homepageContent.artOfStradoonHeadingAccent}
                 </p>
               </div>
               <div className="space-y-3 text-base leading-relaxed text-deepText/95 md:text-lg">
-                {homepageContent.maestroBodyParagraphs.map((paragraph, idx) => (
-                  <p key={idx}>
-                    {lang === "hr"
-                      ? paragraph
-                      : idx === 0
-                        ? "Marco Esposito, originally from Italy, carved his culinary philosophy in the best Italian kitchens around the world. After years of leading prestigious restaurants, the last stop being glittering Miami, he decided to bring his passion and knowledge right here to Dubrovnik."
-                        : "He didn't come alone, he brought a team of Italian experts who in our kitchen breathe, talk and create as one. Every plate that comes to you carries his signature, authentic recipe and experience gained from the world gastronomic map."}
-                  </p>
+                {(lang === "hr" ? homepageContent.artOfStradoonTextHr : homepageContent.artOfStradoonTextEn).map((paragraph, idx) => (
+                  <p key={idx}>{paragraph}</p>
                 ))}
               </div>
             </div>
@@ -71,43 +85,24 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section-padding bg-primaryRed text-ivory">
-        <div className="container-elegant text-center">
-          <ScriptHeading className="text-white md:text-7xl">
-            {lang === "hr" ? "Naša tjestenina" : "Our Pasta"}
-          </ScriptHeading>
-          <p className="mt-8 text-lg text-ivory/95 md:text-xl">
-            {lang === "hr" ? "Naša ručno rađena tjestenina." : "Hand-made pasta."}
-          </p>
-          <div className="mx-auto mt-5 max-w-3xl space-y-3 text-base leading-relaxed text-ivory/90 md:text-lg">
-            {lang === "hr"
-              ? homepageContent.pastaFeatureBody.map((p) => <p key={p}>{p}</p>)
-              : [
-                  "We believe a true Italian story cannot be told without original ingredients. That's exactly what we did, we brought Italy to you. Our cheese wheels, where the chef in front of your eyes finishes the manistra turning it into creamy perfection, come directly from Italian estates.",
-                  "From the finest flour for our hand-made pasta to olive oil and cheese, every ingredient has an Italian passport."
-                ].map((p, idx) => <p key={idx}>{p}</p>)
-            }
-          </div>
-        </div>
-      </section>
-
-      <ImageGrid images={imageAssets.pastaGrid} />
-
       <section className="bg-primaryRed py-4 md:py-6">
         <div className="container-elegant flex flex-wrap items-center justify-center gap-3 md:gap-4">
           <CTAButton href="/breakfast-menu">
             {lang === "hr" ? "Istraži meni" : "Explore Menu"}
           </CTAButton>
-          <CTAButton href="/#contact">
-            {lang === "hr" ? "Rezerviraj" : "Reserve"}
+          <CTAButton href="/cocktail-menu">
+            {lang === "hr" ? "Kokteli" : "Cocktails"}
           </CTAButton>
+          <ReserveButton>
+            {lang === "hr" ? "Rezerviraj" : "Reserve"}
+          </ReserveButton>
         </div>
       </section>
 
       <HeroBanner
-        title={lang === "hr" ? "Breakfast Couture" : homepageContent.breakfastHeroTitle}
-        imageLabel={imageAssets.breakfastHero.label}
-        imageAlt={imageAssets.breakfastHero.alt}
+        title="Breakfast Couture"
+        imageLabel="Breakfast Couture"
+        imageAlt="Breakfast Couture hero"
         videoSrc="/images/Video web-2.mp4"
       />
 
@@ -120,24 +115,24 @@ export default function HomePage() {
             <div className="space-y-3 text-base leading-relaxed text-deepText/95 md:text-lg">
               <p>
                 {lang === "hr"
-                  ? "Prije nego što kuhinjom zavlada miris svježe manistre, Stradoon je oaza mira i vrhunskog bruncha. Naš koncept spaja najfinije sezonske namirnice s modernom prezentacijom. Izabrali smo devet autentičnih doručaka, devet vizualnih i gastronomskih remek-djela dizajniranih za početak dana. Uživajte u okusima koji prate ritam Straduna, uz jedinstven pogled na crkvu sv. Vlaha koji svako jutro čini nezaboravnim."
-                  : "Before the kitchen is filled with the scent of fresh manistra, Stradoon is an oasis of peace and premium brunch. Our concept combines the finest seasonal ingredients with modern presentation. We chose nine authentic breakfasts, nine visual and gastronomic masterpieces designed to start the day. Enjoy flavors that follow the rhythm of Stradoon, with a unique view of St. Blaise's Church that makes every morning unforgettable."}
+                  ? "Stradoon je oaza mira i vrhunskog bruncha. Naš koncept spaja najfinije sezonske namirnice s modernom prezentacijom. Izabrali smo devet autentičnih doručaka, devet vizualnih i gastronomskih remek-djela dizajniranih za početak dana. Uživajte u okusima koji prate ritam Straduna, uz jedinstven pogled na crkvu sv. Vlaha koji svako jutro čini nezaboravnim."
+                  : "Stradoon is an oasis of peace and premium brunch. Our concept combines the finest seasonal ingredients with modern presentation. We chose nine authentic breakfasts, nine visual and gastronomic masterpieces designed to start the day. Enjoy flavors that follow the rhythm of Stradoon, with a unique view of St. Blaise's Church that makes every morning unforgettable."}
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <ImageGrid images={imageAssets.breakfastGrid} />
+      <HorizontalScrollGrid images={imageAssets.secondRowImages} />
 
       <section className="bg-primaryRed py-4 md:py-6">
         <div className="container-elegant flex flex-wrap items-center justify-center gap-3 md:gap-4">
           <CTAButton href="/breakfast-menu">
             {lang === "hr" ? "Istraži meni" : "Explore Menu"}
           </CTAButton>
-          <CTAButton href="/#contact">
+          <ReserveButton>
             {lang === "hr" ? "Rezerviraj" : "Reserve"}
-          </CTAButton>
+          </ReserveButton>
         </div>
       </section>
 
@@ -148,7 +143,6 @@ export default function HomePage() {
         mapSrc={imageAssets.mapPlaceholder.src}
         mapAlt={imageAssets.mapPlaceholder.alt}
       />
-
     </>
   );
 }

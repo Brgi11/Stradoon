@@ -1,14 +1,16 @@
 import ScriptHeading from "@/components/ScriptHeading";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
+import Image from "next/image";
 
 type HeroBannerProps = {
   title: string;
   imageLabel: string;
   imageAlt: string;
   videoSrc?: string;
+  imageSrc?: string;
 };
 
-export default function HeroBanner({ title, imageLabel, imageAlt, videoSrc }: HeroBannerProps) {
+export default function HeroBanner({ title, imageLabel, imageAlt, videoSrc, imageSrc }: HeroBannerProps) {
   return (
     <section className="relative">
       {videoSrc ? (
@@ -24,6 +26,16 @@ export default function HeroBanner({ title, imageLabel, imageAlt, videoSrc }: He
           >
             <source src={videoSrc} type="video/mp4" />
           </video>
+        </div>
+      ) : imageSrc ? (
+        <div className="relative aspect-[16/11] w-full overflow-hidden border-elegant bg-black md:aspect-[16/7]">
+          <Image
+            src={imageSrc}
+            alt={imageAlt}
+            fill
+            className="object-cover"
+            priority
+          />
         </div>
       ) : (
         <ImagePlaceholder
