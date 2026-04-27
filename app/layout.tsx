@@ -46,7 +46,7 @@ export default function RootLayout({
         </a>
         <LanguageProvider>
           <Header />
-          <main id="main-content" className="px-2 sm:px-0">{children}</main>
+          <main id="main-content">{children}</main>
           <Footer />
         </LanguageProvider>
       </body>
