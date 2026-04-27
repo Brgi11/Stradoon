@@ -66,11 +66,39 @@ export default function Header() {
   const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    document.body.style.overflow = isMenuOpen || isReserveOpen ? "hidden" : "";
-    return () => {
+    if (isMenuOpen) {
+      document.documentElement.classList.add("modal-open");
+      document.body.style.overflow = "hidden";
+      document.body.style.overscrollBehavior = "none";
+    } else {
+      document.documentElement.classList.remove("modal-open");
       document.body.style.overflow = "";
+      document.body.style.overscrollBehavior = "";
+    }
+
+    return () => {
+      document.documentElement.classList.remove("modal-open");
+      document.body.style.overflow = "";
+      document.body.style.overscrollBehavior = "";
     };
-  }, [isMenuOpen, isReserveOpen]);
+  }, [isMenuOpen]);
+
+  useEffect(() => {
+    const handlePopstate = () => {
+      if (isMenuOpen) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    if (isMenuOpen) {
+      history.pushState(null, "", location.href);
+      window.addEventListener("popstate", handlePopstate);
+    }
+
+    return () => {
+      window.removeEventListener("popstate", handlePopstate);
+    };
+  }, [isMenuOpen]);
 
   const closeMenu = () => setIsMenuOpen(false);
 
