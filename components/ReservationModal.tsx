@@ -21,30 +21,9 @@ export default function ReservationModal({ isOpen, onClose }: ReservationModalPr
   useEffect(() => {
     if (isOpen) {
       setIsVisible(true);
-      document.documentElement.classList.add("modal-open");
-      document.body.style.position = "fixed";
-      document.body.style.top = "0";
-      document.body.style.left = "0";
-      document.body.style.right = "0";
-      document.body.style.overflow = "hidden";
     } else {
       setIsVisible(false);
-      document.documentElement.classList.remove("modal-open");
-      document.body.style.position = "";
-      document.body.style.top = "";
-      document.body.style.left = "";
-      document.body.style.right = "";
-      document.body.style.overflow = "";
     }
-
-    return () => {
-      document.documentElement.classList.remove("modal-open");
-      document.body.style.position = "";
-      document.body.style.top = "";
-      document.body.style.left = "";
-      document.body.style.right = "";
-      document.body.style.overflow = "";
-    };
   }, [isOpen]);
 
   useEffect(() => {

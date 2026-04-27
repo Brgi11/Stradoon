@@ -66,31 +66,49 @@ export default function Header() {
   const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (isMenuOpen) {
+    const shouldLock = isMenuOpen || isReserveOpen;
+    
+    if (shouldLock) {
+      const scrollY = window.scrollY;
       document.documentElement.classList.add("modal-open");
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.left = "0";
+      document.body.style.right = "0";
       document.body.style.overflow = "hidden";
       document.body.style.overscrollBehavior = "none";
     } else {
+      const scrollY = parseInt(document.body.style.top || "0", 10) * -1;
       document.documentElement.classList.remove("modal-open");
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
       document.body.style.overflow = "";
       document.body.style.overscrollBehavior = "";
+      window.scrollTo(0, scrollY);
     }
 
     return () => {
       document.documentElement.classList.remove("modal-open");
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
       document.body.style.overflow = "";
       document.body.style.overscrollBehavior = "";
     };
-  }, [isMenuOpen]);
+  }, [isMenuOpen, isReserveOpen]);
 
   useEffect(() => {
     const handlePopstate = () => {
-      if (isMenuOpen) {
+      if (isMenuOpen || isReserveOpen) {
         setIsMenuOpen(false);
+        setIsReserveOpen(false);
       }
     };
 
-    if (isMenuOpen) {
+    if (isMenuOpen || isReserveOpen) {
       history.pushState(null, "", location.href);
       window.addEventListener("popstate", handlePopstate);
     }
@@ -98,7 +116,7 @@ export default function Header() {
     return () => {
       window.removeEventListener("popstate", handlePopstate);
     };
-  }, [isMenuOpen]);
+  }, [isMenuOpen, isReserveOpen]);
 
   const closeMenu = () => setIsMenuOpen(false);
 
