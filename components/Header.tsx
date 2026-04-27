@@ -1,14 +1,23 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import type { SVGProps } from "react";
 import { useLanguage } from "@/components/LanguageContext";
+import ReservationModal from "@/components/ReservationModal";
 
-const navItems = [
+type NavItemType = {
+  labelHr: string;
+  labelEn: string;
+  href?: string;
+  isReserve?: boolean;
+};
+
+const navItems: NavItemType[] = [
   { labelHr: "Meni Doručak", labelEn: "Breakfast Menu", href: "/breakfast-menu" },
   { labelHr: "Kokteli", labelEn: "Cocktail Menu", href: "/cocktail-menu" },
+  { labelHr: "Rezerviraj", labelEn: "Reserve", isReserve: true },
   { labelHr: "Kontakt", labelEn: "Contact Us", href: "/#contact" }
 ];
 
@@ -51,20 +60,31 @@ function EmailIcon(props: SVGProps<SVGSVGElement>) {
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isReserveOpen, setIsReserveOpen] = useState(false);
   const { language, toggleLanguage } = useLanguage();
   const lang = language;
+  const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    document.body.style.overflow = isMenuOpen ? "hidden" : "";
+    document.body.style.overflow = isMenuOpen || isReserveOpen ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
     };
-  }, [isMenuOpen]);
+  }, [isMenuOpen, isReserveOpen]);
 
   const closeMenu = () => setIsMenuOpen(false);
 
-  const getNavLabel = (item: { labelHr: string; labelEn: string; href: string }) => {
+  const getNavLabel = (item: NavItemType) => {
     return lang === "hr" ? item.labelHr : item.labelEn;
+  };
+
+  const handleNavClick = (item: NavItemType) => {
+    if (item.isReserve) {
+      setIsReserveOpen(true);
+      closeMenu();
+    } else {
+      closeMenu();
+    }
   };
 
   return (
@@ -118,6 +138,7 @@ export default function Header() {
         role="presentation"
       >
         <div
+          ref={menuRef}
           className={`absolute left-0 top-0 h-full w-[84%] max-w-sm transform bg-primaryRed px-6 py-6 text-ivory shadow-2xl transition-transform duration-300 ${
             isMenuOpen ? "translate-x-0" : "-translate-x-full"
           }`}
@@ -137,15 +158,25 @@ export default function Header() {
 
           <nav aria-label="Mobile navigation">
             <ul className="space-y-4 text-xl">
-              {navItems.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    onClick={closeMenu}
-                    className="block border-b border-ivory/25 pb-3 transition hover:text-ivory/80"
-                  >
-                    {getNavLabel(item)}
-                  </Link>
+              {navItems.map((item, idx) => (
+                <li key={idx}>
+                  {item.isReserve ? (
+                    <button
+                      type="button"
+                      onClick={() => handleNavClick(item)}
+                      className="block w-full border-b border-ivory/25 pb-3 text-left transition hover:text-ivory/80"
+                    >
+                      {getNavLabel(item)}
+                    </button>
+                  ) : (
+                    <Link
+                      href={item.href || "/"}
+                      onClick={() => handleNavClick(item)}
+                      className="block border-b border-ivory/25 pb-3 transition hover:text-ivory/80"
+                    >
+                      {getNavLabel(item)}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -167,6 +198,8 @@ export default function Header() {
           </div>
         </div>
       </div>
+
+      <ReservationModal isOpen={isReserveOpen} onClose={() => setIsReserveOpen(false)} />
     </>
   );
 }

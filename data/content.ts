@@ -67,6 +67,7 @@ export const imageAssets = {
 export const homepageContent = {
   heroSubtitle: "Welcome",
   heroTitle: "Martini & Restaurant",
+  introHeading: "Martini Bar & Restaurant",
   introTextHr:
     "Mjesto gdje se povijest susreće s modernim užitkom. Od prvih jutarnjih zraka sunca na Stradunu do elegantnih večeri uz Martini, dobrodošli u naš svijet.",
   introTextEn:
@@ -180,7 +181,7 @@ export const cocktailMenuContent = {
     en: "NON ALCOHOLIC BRUNCH"
   },
   bondBarTitle: {
-    hr: '"Bond\'s Bar"',
+    hr: '"Bondov Bar"',
     en: '"Bond\'s Bar"'
   },
   shootersTitle: {

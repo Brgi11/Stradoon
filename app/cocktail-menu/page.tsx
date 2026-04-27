@@ -5,7 +5,7 @@ import Image from "next/image";
 import HeroBanner from "@/components/HeroBanner";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import ScriptHeading from "@/components/ScriptHeading";
-import { cocktailMenuItems } from "@/data/content";
+import { cocktailMenuItems, cocktailMenuContent } from "@/data/content";
 import { useLanguage } from "@/components/LanguageContext";
 
 function MenuCategory({ title, items, language, textColor = "ivory" }: { title: string; items: typeof cocktailMenuItems; language: "hr" | "en"; textColor?: string }) {
@@ -99,25 +99,31 @@ export default function CocktailMenuPage() {
 
       <section className="bg-primaryRed py-6 md:py-10">
         <div className="container-elegant">
-          <div className="flex h-64 flex-col gap-4 md:h-96 md:flex-row md:justify-center md:gap-6">
-            <ImagePlaceholder
-              src="/images/IMG_4435.jpg"
-              label="Cocktail image 1"
-              alt="Cocktail image 1"
-              className="h-full w-full shadow-[0_8px_24px_rgba(0,0,0,0.22)] md:w-80"
-            />
-            <ImagePlaceholder
-              src="/images/IMG_4449.jpg"
-              label="Cocktail image 2"
-              alt="Cocktail image 2"
-              className="h-full w-full shadow-[0_8px_24px_rgba(0,0,0,0.22)] md:w-80"
-            />
-            <ImagePlaceholder
-              src="/images/IMG_4443.jpg"
-              label="Cocktail image 3"
-              alt="Cocktail image 3"
-              className="h-full w-full shadow-[0_8px_24px_rgba(0,0,0,0.22)] md:w-80"
-            />
+          <div className="flex h-64 gap-3 overflow-x-auto pb-2 md:h-96 md:flex-row md:justify-center md:gap-6 md:overflow-visible md:pb-0">
+            <div className="flex-shrink-0 md:flex-shrink">
+              <ImagePlaceholder
+                src="/images/IMG_4435.jpg"
+                label="Cocktail image 1"
+                alt="Cocktail image 1"
+                className="h-full w-64 shadow-[0_8px_24px_rgba(0,0,0,0.22)] md:w-80"
+              />
+            </div>
+            <div className="flex-shrink-0 md:flex-shrink">
+              <ImagePlaceholder
+                src="/images/IMG_4449.jpg"
+                label="Cocktail image 2"
+                alt="Cocktail image 2"
+                className="h-full w-64 shadow-[0_8px_24px_rgba(0,0,0,0.22)] md:w-80"
+              />
+            </div>
+            <div className="flex-shrink-0 md:flex-shrink">
+              <ImagePlaceholder
+                src="/images/IMG_4443.jpg"
+                label="Cocktail image 3"
+                alt="Cocktail image 3"
+                className="h-full w-64 shadow-[0_8px_24px_rgba(0,0,0,0.22)] md:w-80"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -134,7 +140,7 @@ export default function CocktailMenuPage() {
       <section className="bg-ivory py-16 md:py-24">
         <div className="container-elegant">
           <h2 className="text-center font-script text-3xl text-primaryRed md:text-5xl">
-            {lang === "hr" ? '"Bondov Bar"' : "Bond's Bar"}
+            {cocktailMenuContent.bondBarTitle[lang]}
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-base leading-relaxed text-deepText/90 md:text-lg">
             {lang === "hr"

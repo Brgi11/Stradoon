@@ -47,6 +47,9 @@ export default function HomePage() {
 
       <section className="section-padding bg-ivory">
         <div className="container-elegant">
+          <h2 className="mb-4 text-center font-cardo text-3xl font-bold text-primaryRed md:text-5xl">
+            {lang === "hr" ? "Martini Bar & Restoran" : "Martini Bar & Restaurant"}
+          </h2>
           <div className="mx-auto my-6 max-w-[64ch] text-center text-lg leading-relaxed text-deepText/95 md:my-10 md:text-2xl">
             <p>
               {lang === "hr" ? homepageContent.introTextHr : homepageContent.introTextEn}
