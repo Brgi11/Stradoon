@@ -17,6 +17,7 @@ type NavItemType = {
 
 const navItems: NavItemType[] = [
   { labelHr: "Meni Doručak", labelEn: "Breakfast Menu", href: "/breakfast-menu" },
+  { labelHr: "Meni Tjestenina", labelEn: "Pasta Menu", href: "/pasta-menu" },
   { labelHr: "Kokteli", labelEn: "Cocktail Menu", href: "/cocktail-menu" },
   { labelHr: "Rezerviraj", labelEn: "Reserve", isReserve: true },
   { labelHr: "Kontakt", labelEn: "Contact Us", href: "/#contact" }

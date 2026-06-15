@@ -24,7 +24,10 @@ export default function HeroBanner({ title, imageLabel, imageAlt, videoSrc, imag
             preload="metadata"
             aria-label={imageAlt}
           >
-            <source src={videoSrc} type="video/mp4" />
+            <source
+              src={videoSrc}
+              type={videoSrc.toLowerCase().endsWith(".mov") ? "video/quicktime" : "video/mp4"}
+            />
           </video>
         </div>
       ) : imageSrc ? (
@@ -46,8 +49,8 @@ export default function HeroBanner({ title, imageLabel, imageAlt, videoSrc, imag
         />
       )}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/45 to-black/15" />
-      <div className="absolute inset-0 flex items-center justify-center px-6 pb-6 text-center md:pb-10">
-        <ScriptHeading className="text-5xl text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.45)] md:text-7xl">
+      <div className="absolute inset-0 flex items-center justify-center px-4 pb-6 text-center sm:px-6 md:pb-10">
+        <ScriptHeading className="text-4xl leading-tight text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.45)] sm:text-5xl md:text-7xl">
           {title}
         </ScriptHeading>
       </div>

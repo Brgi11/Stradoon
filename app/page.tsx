@@ -1,36 +1,14 @@
 "use client";
 
 import HeroBanner from "@/components/HeroBanner";
-import Image from "next/image";
-import ScriptHeading from "@/components/ScriptHeading";
 import SectionTitle from "@/components/SectionTitle";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
+import ImageRow from "@/components/ImageRow";
 import CTAButton from "@/components/CTAButton";
 import { ReserveButton } from "@/components/CTAButton";
 import ContactSection from "@/components/ContactSection";
 import { homepageContent, imageAssets } from "@/data/content";
 import { useLanguage } from "@/components/LanguageContext";
-
-function HorizontalScrollGrid({ images }: { images: typeof imageAssets.firstRowImages }) {
-  return (
-    <section className="bg-primaryRed py-6 md:py-10">
-      <div className="container-elegant">
-        <div className="flex gap-3 overflow-x-auto pb-2 md:grid md:grid-cols-3 md:gap-5 md:overflow-visible md:pb-0">
-          {images.map((image) => (
-            <div key={image.src} className="flex-shrink-0 md:flex-shrink">
-              <ImagePlaceholder
-                src={image.src}
-                label={image.label}
-                alt={image.alt}
-                className="aspect-[4/5] w-64 shadow-[0_8px_24px_rgba(0,0,0,0.22)] md:w-auto"
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 export default function HomePage() {
   const { language } = useLanguage();
@@ -47,10 +25,10 @@ export default function HomePage() {
 
       <section className="section-padding bg-ivory">
         <div className="container-elegant">
-          <h2 className="mb-4 text-center font-cardo text-3xl font-bold text-primaryRed md:text-5xl">
-            {lang === "hr" ? "Martini Bar & Restoran" : "Martini Bar & Restaurant"}
+          <h2 className="mb-4 text-balance text-center font-cardo text-2xl font-bold text-primaryRed sm:text-3xl md:text-5xl">
+            {lang === "hr" ? homepageContent.introHeadingHr : homepageContent.introHeadingEn}
           </h2>
-          <div className="mx-auto my-6 max-w-[64ch] text-center text-lg leading-relaxed text-deepText/95 md:my-10 md:text-2xl">
+          <div className="mx-auto my-6 max-w-[64ch] text-center text-base leading-relaxed text-deepText/95 sm:text-lg md:my-10 md:text-2xl">
             <p>
               {lang === "hr" ? homepageContent.introTextHr : homepageContent.introTextEn}
             </p>
@@ -58,7 +36,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <HorizontalScrollGrid images={imageAssets.firstRowImages} />
+      <ImageRow images={imageAssets.firstRowImages} columns={4} />
 
       <section className="section-padding bg-ivory">
         <div className="container-elegant">
@@ -69,12 +47,12 @@ export default function HomePage() {
               alt={imageAssets.artOfStradoonImage.alt}
               className="aspect-[4/5]"
             />
-            <div className="space-y-4 text-right">
+            <div className="space-y-4 text-center md:text-right">
               <div className="font-script leading-none text-primaryRed">
-                <p className="text-5xl md:text-6xl">
+                <p className="text-4xl sm:text-5xl md:text-6xl">
                   {homepageContent.artOfStradoonHeading}
                 </p>
-                <p className="-mt-1 text-6xl md:-mt-2 md:text-8xl">
+                <p className="-mt-1 text-5xl sm:text-6xl md:-mt-2 md:text-8xl">
                   {homepageContent.artOfStradoonHeadingAccent}
                 </p>
               </div>
@@ -89,12 +67,12 @@ export default function HomePage() {
       </section>
 
       <section className="bg-primaryRed py-4 md:py-6">
-        <div className="container-elegant flex flex-wrap items-center justify-center gap-3 md:gap-4">
+        <div className="container-elegant flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center md:gap-4">
           <CTAButton href="/breakfast-menu">
-            {lang === "hr" ? "Istraži meni" : "Explore Menu"}
+            {lang === "hr" ? "Meni Doručak" : "Breakfast Menu"}
           </CTAButton>
-          <CTAButton href="/cocktail-menu">
-            {lang === "hr" ? "Kokteli" : "Cocktails"}
+          <CTAButton href="/pasta-menu">
+            {lang === "hr" ? "Meni Tjestenina" : "Pasta Menu"}
           </CTAButton>
           <ReserveButton>
             {lang === "hr" ? "Rezerviraj" : "Reserve"}
@@ -111,27 +89,58 @@ export default function HomePage() {
 
       <section className="section-padding bg-ivory">
         <div className="container-elegant">
-          <div className="mx-auto max-w-[66ch] text-center">
-            <SectionTitle className="mb-5 text-primaryRed md:text-nowrap">
+          <div className="mx-auto max-w-3xl text-center">
+            <SectionTitle className="mb-5 text-center text-primaryRed">
               {lang === "hr" ? "Jutro s najljepšim pogledom na grad." : "Morning with the best view of the city."}
             </SectionTitle>
-            <div className="space-y-3 text-base leading-relaxed text-deepText/95 md:text-lg">
-              <p>
+            <p className="text-base leading-relaxed text-deepText/95 md:text-lg">
                 {lang === "hr"
                   ? "Stradoon je oaza mira i vrhunskog bruncha. Naš koncept spaja najfinije sezonske namirnice s modernom prezentacijom. Izabrali smo devet autentičnih doručaka, devet vizualnih i gastronomskih remek-djela dizajniranih za početak dana. Uživajte u okusima koji prate ritam Straduna, uz jedinstven pogled na crkvu sv. Vlaha koji svako jutro čini nezaboravnim."
                   : "Stradoon is an oasis of peace and premium brunch. Our concept combines the finest seasonal ingredients with modern presentation. We chose nine authentic breakfasts, nine visual and gastronomic masterpieces designed to start the day. Enjoy flavors that follow the rhythm of Stradoon, with a unique view of St. Blaise's Church that makes every morning unforgettable."}
-              </p>
-            </div>
+            </p>
           </div>
         </div>
       </section>
 
-      <HorizontalScrollGrid images={imageAssets.secondRowImages} />
+      <ImageRow images={imageAssets.secondRowImages} />
 
       <section className="bg-primaryRed py-4 md:py-6">
-        <div className="container-elegant flex flex-wrap items-center justify-center gap-3 md:gap-4">
+        <div className="container-elegant flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center md:gap-4">
           <CTAButton href="/breakfast-menu">
-            {lang === "hr" ? "Istraži meni" : "Explore Menu"}
+            {lang === "hr" ? "Meni Doručak" : "Breakfast Menu"}
+          </CTAButton>
+          <ReserveButton>
+            {lang === "hr" ? "Rezerviraj" : "Reserve"}
+          </ReserveButton>
+        </div>
+      </section>
+
+      <HeroBanner
+        title={lang === "hr" ? homepageContent.pastaSectionTitleHr : homepageContent.pastaSectionTitleEn}
+        imageLabel="Handmade pasta"
+        imageAlt="Handmade pasta hero"
+        videoSrc={imageAssets.pastaVideo}
+      />
+
+      <section className="section-padding bg-ivory">
+        <div className="container-elegant">
+          <div className="mx-auto max-w-3xl text-center">
+            <SectionTitle className="mb-5 text-center text-primaryRed">
+              {lang === "hr" ? homepageContent.pastaSectionHeadingHr : homepageContent.pastaSectionHeadingEn}
+            </SectionTitle>
+            <p className="text-base leading-relaxed text-deepText/95 md:text-lg">
+              {lang === "hr" ? homepageContent.pastaSectionTextHr : homepageContent.pastaSectionTextEn}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <ImageRow images={imageAssets.pastaRowImages} columns={2} />
+
+      <section className="bg-primaryRed py-4 md:py-6">
+        <div className="container-elegant flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center md:gap-4">
+          <CTAButton href="/pasta-menu">
+            {lang === "hr" ? "Meni Tjestenina" : "Pasta Menu"}
           </CTAButton>
           <ReserveButton>
             {lang === "hr" ? "Rezerviraj" : "Reserve"}

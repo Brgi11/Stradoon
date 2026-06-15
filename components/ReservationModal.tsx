@@ -55,7 +55,7 @@ export default function ReservationModal({ isOpen, onClose }: ReservationModalPr
       role="presentation"
     >
       <div
-        className="absolute left-1/2 top-1/2 w-[92%] max-w-md -translate-x-1/2 -translate-y-1/2 bg-ivory p-6 shadow-2xl md:p-8"
+        className="absolute left-1/2 top-1/2 max-h-[90vh] w-[92%] max-w-md -translate-x-1/2 -translate-y-1/2 overflow-y-auto bg-ivory p-5 shadow-2xl sm:p-6 md:p-8"
         onClick={(e) => e.stopPropagation()}
         role="dialog"
         aria-modal="true"

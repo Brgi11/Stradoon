@@ -1,6 +1,6 @@
 "use client";
 
-import ImagePlaceholder from "@/components/ImagePlaceholder";
+import ImageRow from "@/components/ImageRow";
 import HeroBanner from "@/components/HeroBanner";
 import ScriptHeading from "@/components/ScriptHeading";
 import { cocktailMenuItems, cocktailMenuContent } from "@/data/content";
@@ -25,7 +25,7 @@ function MenuCategory({ title, items, language, textColor = "ivory" }: { title: 
         {items.map((item) => (
           <div
             key={item.name}
-            className={`flex justify-between gap-4 border-b ${borderClass} pb-3 last:border-0`}
+            className={`flex flex-col gap-2 border-b ${borderClass} pb-3 last:border-0 sm:flex-row sm:justify-between sm:gap-4`}
           >
             <div className="flex-1">
               <h4 className={`text-sm font-semibold tracking-wide ${textClass} md:text-base`}>
@@ -35,7 +35,7 @@ function MenuCategory({ title, items, language, textColor = "ivory" }: { title: 
                 {language === "hr" ? item.hrDescription : item.enDescription}
               </p>
             </div>
-            <p className={`whitespace-nowrap text-sm font-semibold ${textClass} md:text-base`}>
+            <p className={`text-sm font-semibold sm:whitespace-nowrap ${textClass} md:text-base`}>
               {item.price}
             </p>
           </div>
@@ -73,7 +73,7 @@ export default function CocktailMenuPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
         <div className="container-elegant relative z-10">
           <div className="text-center">
-            <ScriptHeading className="mt-3 text-white md:text-7xl">
+            <ScriptHeading className="mt-3 text-4xl text-white sm:text-5xl md:text-7xl">
               Liquid Couture
             </ScriptHeading>
             <div className="mx-auto mt-5 h-px w-28 bg-ivory/40 md:w-36" />
@@ -95,36 +95,14 @@ export default function CocktailMenuPage() {
         </div>
       </section>
 
-      <section className="bg-primaryRed py-6 md:py-10">
-        <div className="container-elegant">
-          <div className="flex gap-3 overflow-x-auto pb-2 md:grid md:grid-cols-3 md:gap-5 md:overflow-visible md:pb-0">
-            <div className="flex-shrink-0">
-              <ImagePlaceholder
-                src="/images/IMG_4435.jpg"
-                label="Cocktail image 1"
-                alt="Cocktail image 1"
-                className="aspect-[4/5] w-64 shadow-[0_8px_24px_rgba(0,0,0,0.22)] md:w-auto"
-              />
-            </div>
-            <div className="flex-shrink-0">
-              <ImagePlaceholder
-                src="/images/IMG_4449.jpg"
-                label="Cocktail image 2"
-                alt="Cocktail image 2"
-                className="aspect-[4/5] w-64 shadow-[0_8px_24px_rgba(0,0,0,0.22)] md:w-auto"
-              />
-            </div>
-            <div className="flex-shrink-0">
-              <ImagePlaceholder
-                src="/images/IMG_4443.jpg"
-                label="Cocktail image 3"
-                alt="Cocktail image 3"
-                className="aspect-[4/5] w-64 shadow-[0_8px_24px_rgba(0,0,0,0.22)] md:w-auto"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      <ImageRow
+        images={[
+          { src: "/images/IMG_4435.jpg", alt: "Cocktail image 1", label: "Cocktail image 1" },
+          { src: "/images/IMG_4449.jpg", alt: "Cocktail image 2", label: "Cocktail image 2" },
+          { src: "/images/IMG_4443.jpg", alt: "Cocktail image 3", label: "Cocktail image 3" }
+        ]}
+        columns={3}
+      />
 
       <section className="bg-primaryRed py-16 md:py-24">
         <div className="container-elegant">
@@ -145,7 +123,7 @@ export default function CocktailMenuPage() {
               ? "SHAKEN, NOT STIRRED - Ikonični kokteli po receptu Jamesovog menija."
               : "SHAKEN, NOT STIRRED - Iconic cocktails from James' secret menu."}
           </p>
-          <div className="mt-8 rounded-none border border-primaryRed/20 bg-white/80 p-6 shadow-sm">
+          <div className="mt-8 rounded-none border border-primaryRed/20 bg-white/80 p-4 shadow-sm sm:p-6">
             <MenuCategory title="" items={bondBarItems} language={lang} textColor="dark" />
           </div>
         </div>
