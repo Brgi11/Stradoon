@@ -28,39 +28,76 @@ export const imageAssets = {
   },
   firstRowImages: [
     {
-      src: "/images/firstRowfirstImage.jpg",
+      src: "/images/frfi.JPG",
       alt: "First row image 1",
       label: "First row image 1"
     },
     {
-      src: "/images/firstRowSecondImage.jpg",
+      src: "/images/frsi.JPG",
       alt: "First row image 2",
       label: "First row image 2"
     },
     {
-      src: "/images/firstRowThirdImage.jpg",
+      src: "/images/frti.jpg",
       alt: "First row image 3",
       label: "First row image 3"
     },
     {
-      src: "/images/ksirvin.JPG",
+      src: "/images/fr4i.jpg",
       alt: "First row image 4",
       label: "First row image 4"
+    },
+    {
+      src: "/images/fr5i.jpg",
+      alt: "First row image 5",
+      label: "First row image 5"
     }
   ] as ImageAsset[],
   pastaRowImages: [
     {
-      src: "/images/hzrk.JPG",
+      src: "/images/pr1i.JPG",
       alt: "Handmade pasta detail 1",
       label: "Pasta image 1"
     },
     {
-      src: "/images/ksir.JPG",
+      src: "/images/pr2i.JPG",
       alt: "Handmade pasta detail 2",
       label: "Pasta image 2"
+    },
+    {
+      src: "/images/pr3i.jpg",
+      alt: "Handmade pasta detail 3",
+      label: "Pasta image 3"
+    },
+    {
+      src: "/images/pr4i.jpg",
+      alt: "Handmade pasta detail 4",
+      label: "Pasta image 4"
+    },
+    {
+      src: "/images/pr5i.jpg",
+      alt: "Handmade pasta detail 5",
+      label: "Pasta image 5"
     }
   ] as ImageAsset[],
-  pastaVideo: "/images/copy_299F9A3E-F46F-4BD9-B15C-FCDCAA2C7132.MOV",
+  pastaPageRowImages: [
+    {
+      src: "/images/ps1i.jpg",
+      alt: "Pasta menu image 1",
+      label: "Pasta menu image 1"
+    },
+    {
+      src: "/images/ps2i.jpg",
+      alt: "Pasta menu image 2",
+      label: "Pasta menu image 2"
+    },
+    {
+      src: "/images/ps3i.jpg",
+      alt: "Pasta menu image 3",
+      label: "Pasta menu image 3"
+    }
+  ] as ImageAsset[],
+  pastaVideo: "/images/pasta-hero.mp4",
   artOfStradoonImage: {
     src: "/images/The art of.jpg",
     alt: "The Art of Stradoon",
@@ -68,19 +105,29 @@ export const imageAssets = {
   },
   secondRowImages: [
     {
-      src: "/images/secondRowFirstImage.jpg",
-      alt: "Second row image 1",
-      label: "Second row image 1"
+      src: "/images/sr1i.jpg",
+      alt: "Breakfast row image 1",
+      label: "Breakfast row image 1"
     },
     {
-      src: "/images/secondRowSecondImage.jpg",
-      alt: "Second row image 2",
-      label: "Second row image 2"
+      src: "/images/sr2i.jpg",
+      alt: "Breakfast row image 2",
+      label: "Breakfast row image 2"
     },
     {
-      src: "/images/secondRowThirdImage.jpg",
-      alt: "Second row image 3",
-      label: "Second row image 3"
+      src: "/images/sr3i.jpg",
+      alt: "Breakfast row image 3",
+      label: "Breakfast row image 3"
+    },
+    {
+      src: "/images/sr4i.jpg",
+      alt: "Breakfast row image 4",
+      label: "Breakfast row image 4"
+    },
+    {
+      src: "/images/sr5i.jpg",
+      alt: "Breakfast row image 5",
+      label: "Breakfast row image 5"
     }
   ] as ImageAsset[],
   mapPlaceholder: {

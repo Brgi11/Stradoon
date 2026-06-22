@@ -36,7 +36,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <ImageRow images={imageAssets.firstRowImages} columns={4} />
+      <ImageRow images={imageAssets.firstRowImages} columns={5} layout="scroll" size="large" />
 
       <section className="section-padding bg-ivory">
         <div className="container-elegant">
@@ -84,7 +84,7 @@ export default function HomePage() {
         title="Breakfast Couture"
         imageLabel="Breakfast Couture"
         imageAlt="Breakfast Couture hero"
-        videoSrc="/images/Video web-2.mp4"
+        videoSrc="/images/breakfast-hero.mp4"
       />
 
       <section className="section-padding bg-ivory">
@@ -102,7 +102,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <ImageRow images={imageAssets.secondRowImages} />
+      <ImageRow images={imageAssets.secondRowImages} columns={5} layout="scroll" size="large" />
 
       <section className="bg-primaryRed py-4 md:py-6">
         <div className="container-elegant flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center md:gap-4">
@@ -135,7 +135,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <ImageRow images={imageAssets.pastaRowImages} columns={2} />
+      <ImageRow images={imageAssets.pastaRowImages} columns={5} layout="scroll" size="large" />
 
       <section className="bg-primaryRed py-4 md:py-6">
         <div className="container-elegant flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center md:gap-4">

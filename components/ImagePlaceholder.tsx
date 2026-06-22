@@ -6,6 +6,7 @@ type ImagePlaceholderProps = {
   src?: string;
   className?: string;
   priority?: boolean;
+  sizes?: string;
 };
 
 const toDataUri = (label: string) => {
@@ -19,7 +20,8 @@ export default function ImagePlaceholder({
   alt,
   src,
   className = "",
-  priority = false
+  priority = false,
+  sizes = "(max-width: 768px) 100vw, 50vw"
 }: ImagePlaceholderProps) {
   return (
     <div className={`relative overflow-hidden rounded-sm border-elegant bg-[#f5ece2] ${className}`}>
@@ -28,8 +30,9 @@ export default function ImagePlaceholder({
         alt={alt}
         fill
         priority={priority}
+        loading={priority ? undefined : "lazy"}
         className="object-cover"
-        sizes="(max-width: 768px) 100vw, 50vw"
+        sizes={sizes}
       />
     </div>
   );

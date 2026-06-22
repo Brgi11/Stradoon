@@ -1,5 +1,6 @@
 import ScriptHeading from "@/components/ScriptHeading";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
+import LazyVideo from "@/components/LazyVideo";
 import Image from "next/image";
 
 type HeroBannerProps = {
@@ -14,22 +15,11 @@ export default function HeroBanner({ title, imageLabel, imageAlt, videoSrc, imag
   return (
     <section className="relative">
       {videoSrc ? (
-        <div className="relative aspect-[16/11] w-full overflow-hidden border-elegant bg-black md:aspect-[16/7]">
-          <video
-            className="size-full object-cover"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            aria-label={imageAlt}
-          >
-            <source
-              src={videoSrc}
-              type={videoSrc.toLowerCase().endsWith(".mov") ? "video/quicktime" : "video/mp4"}
-            />
-          </video>
-        </div>
+        <LazyVideo
+          src={videoSrc}
+          ariaLabel={imageAlt}
+          className="relative aspect-[16/11] w-full overflow-hidden border-elegant bg-black md:aspect-[16/7]"
+        />
       ) : imageSrc ? (
         <div className="relative aspect-[16/11] w-full overflow-hidden border-elegant bg-black md:aspect-[16/7]">
           <Image

@@ -14,7 +14,7 @@ export default function BreakfastMenuPage() {
     <>
       <HeroBanner
         title="Breakfast Couture"
-        videoSrc="/images/Video web-2.mp4"
+        videoSrc="/images/breakfast-hero.mp4"
         imageAlt="Breakfast Menu"
         imageLabel="Breakfast Menu"
       />

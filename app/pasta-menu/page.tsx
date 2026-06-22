@@ -1,6 +1,7 @@
 "use client";
 
 import HeroBanner from "@/components/HeroBanner";
+import ImageRow from "@/components/ImageRow";
 import PastaMenuList from "@/components/PastaMenuList";
 import { homepageContent, imageAssets, pastaMenuCategories } from "@/data/content";
 import { useLanguage } from "@/components/LanguageContext";
@@ -33,6 +34,7 @@ export default function PastaMenuPage() {
           </div>
         </div>
       </section>
+      <ImageRow images={imageAssets.pastaPageRowImages} columns={3} />
       <PastaMenuList categories={pastaMenuCategories} />
     </>
   );

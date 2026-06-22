@@ -67,7 +67,7 @@ export default function CocktailMenuPage() {
             playsInline
             preload="metadata"
           >
-            <source src="/images/video 2.mp4" type="video/mp4" />
+            <source src="/images/cocktail-hero.mp4" type="video/mp4" />
           </video>
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />

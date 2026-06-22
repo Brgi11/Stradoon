@@ -37,7 +37,7 @@ export default function MenuItem({ item, index, showImage = true }: MenuItemProp
         >
           <div className="relative aspect-[4/3]">
             {item.imageSrc && (
-              <Image src={item.imageSrc} alt={item.name} fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+              <Image src={item.imageSrc} alt={item.name} fill loading="lazy" className="object-cover" sizes="(max-width: 768px) 100vw, 600px" />
             )}
           </div>
         </div>
