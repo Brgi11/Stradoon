@@ -25,9 +25,37 @@ const snell = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Stradoon | Luxury Mediterranean Restaurant",
+  metadataBase: new URL("https://stradoon.com"),
+  title: "Stradoon | Breakfast, Handmade Pasta & Martini Bar",
   description:
-    "Stradoon in Dubrovnik delivers an elegant Mediterranean dining experience with handmade pasta and refined breakfast creations."
+    "Stradoon in Dubrovnik delivers an elegant Mediterranean dining experience with handmade pasta and refined breakfast creations.",
+  icons: {
+    icon: "/images/stradoon-mini-logo.jpg",
+    shortcut: "/images/stradoon-mini-logo.jpg",
+    apple: "/images/stradoon-mini-logo.jpg"
+  },
+  openGraph: {
+    type: "website",
+    siteName: "Stradoon",
+    title: "Stradoon | Breakfast, Handmade Pasta & Martini Bar",
+    description:
+      "Stradoon in Dubrovnik delivers an elegant Mediterranean dining experience with handmade pasta and refined breakfast creations.",
+    images: [
+      {
+        url: "/images/stradoon-mini-logo.jpg",
+        width: 500,
+        height: 500,
+        alt: "Stradoon logo"
+      }
+    ]
+  },
+  twitter: {
+    card: "summary",
+    title: "Stradoon | Breakfast, Handmade Pasta & Martini Bar",
+    description:
+      "Stradoon in Dubrovnik delivers an elegant Mediterranean dining experience with handmade pasta and refined breakfast creations.",
+    images: ["/images/stradoon-mini-logo.jpg"]
+  }
 };
 
 export default function RootLayout({
