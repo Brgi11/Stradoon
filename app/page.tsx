@@ -36,7 +36,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <ImageRow images={imageAssets.firstRowImages} columns={5} layout="scroll" size="large" />
+      <ImageRow images={imageAssets.firstRowImages} columns={4} layout="scroll" size="large" />
 
       <section className="section-padding bg-ivory">
         <div className="container-elegant">
@@ -71,8 +71,8 @@ export default function HomePage() {
           <CTAButton href="/breakfast-menu">
             {lang === "hr" ? "Meni Doručak" : "Breakfast Menu"}
           </CTAButton>
-          <CTAButton href="/pasta-menu">
-            {lang === "hr" ? "Meni Tjestenina" : "Pasta Menu"}
+          <CTAButton href="/cocktail-menu">
+            {lang === "hr" ? "Kokteli" : "Cocktails"}
           </CTAButton>
           <ReserveButton>
             {lang === "hr" ? "Rezerviraj" : "Reserve"}
@@ -108,39 +108,6 @@ export default function HomePage() {
         <div className="container-elegant flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center md:gap-4">
           <CTAButton href="/breakfast-menu">
             {lang === "hr" ? "Meni Doručak" : "Breakfast Menu"}
-          </CTAButton>
-          <ReserveButton>
-            {lang === "hr" ? "Rezerviraj" : "Reserve"}
-          </ReserveButton>
-        </div>
-      </section>
-
-      <HeroBanner
-        title={lang === "hr" ? homepageContent.pastaSectionTitleHr : homepageContent.pastaSectionTitleEn}
-        imageLabel="Handmade pasta"
-        imageAlt="Handmade pasta hero"
-        videoSrc={imageAssets.pastaVideo}
-      />
-
-      <section className="section-padding bg-ivory">
-        <div className="container-elegant">
-          <div className="mx-auto max-w-3xl text-center">
-            <SectionTitle className="mb-5 text-center text-primaryRed">
-              {lang === "hr" ? homepageContent.pastaSectionHeadingHr : homepageContent.pastaSectionHeadingEn}
-            </SectionTitle>
-            <p className="text-base leading-relaxed text-deepText/95 md:text-lg">
-              {lang === "hr" ? homepageContent.pastaSectionTextHr : homepageContent.pastaSectionTextEn}
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <ImageRow images={imageAssets.pastaRowImages} columns={5} layout="scroll" size="large" />
-
-      <section className="bg-primaryRed py-4 md:py-6">
-        <div className="container-elegant flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center md:gap-4">
-          <CTAButton href="/pasta-menu">
-            {lang === "hr" ? "Meni Tjestenina" : "Pasta Menu"}
           </CTAButton>
           <ReserveButton>
             {lang === "hr" ? "Rezerviraj" : "Reserve"}

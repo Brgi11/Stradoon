@@ -18,8 +18,8 @@ export default function ImageRow({
 
   const scrollItemClassName =
     size === "large"
-      ? "w-[88vw] max-w-[24rem] flex-shrink-0 snap-center sm:w-[21rem] md:w-[24rem] lg:w-auto lg:max-w-none lg:flex-shrink"
-      : "w-[72vw] max-w-[16rem] flex-shrink-0 snap-center sm:w-56 lg:w-auto lg:max-w-none lg:flex-shrink";
+      ? "w-[68vw] max-w-[18rem] flex-shrink-0 snap-start sm:w-[18rem] md:w-[20rem] lg:w-auto lg:max-w-none lg:flex-shrink"
+      : "w-[62vw] max-w-[14rem] flex-shrink-0 snap-start sm:w-52 lg:w-auto lg:max-w-none lg:flex-shrink";
 
   if (columns === 2) {
     return (
@@ -42,11 +42,19 @@ export default function ImageRow({
     );
   }
 
-  if (layout === "scroll" && columns === 5) {
+  if (layout === "scroll" && (columns === 4 || columns === 5)) {
+    const lgGridClass = columns === 5 ? "lg:grid-cols-5" : "lg:grid-cols-4";
+    const scrollSizes =
+      columns === 5
+        ? "(max-width: 640px) 68vw, (max-width: 1024px) 320px, 20vw"
+        : "(max-width: 640px) 68vw, (max-width: 1024px) 320px, 25vw";
+
     return (
       <section className="bg-primaryRed py-6 md:py-10">
         <div className="container-elegant-wide">
-          <div className="flex gap-4 overflow-x-auto scroll-px-4 pb-2 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] lg:grid lg:grid-cols-5 lg:gap-4 lg:overflow-visible lg:pb-0 xl:gap-5 [&::-webkit-scrollbar]:hidden">
+          <div
+            className={`flex gap-4 overflow-x-auto scroll-px-4 pb-2 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] lg:grid ${lgGridClass} lg:gap-4 lg:overflow-visible lg:pb-0 xl:gap-5 [&::-webkit-scrollbar]:hidden`}
+          >
             {images.map((image) => (
               <div key={image.src} className={scrollItemClassName}>
                 <ImagePlaceholder
@@ -54,7 +62,7 @@ export default function ImageRow({
                   label={image.label}
                   alt={image.alt}
                   className={imageClassName}
-                  sizes="(max-width: 640px) 88vw, (max-width: 1024px) 384px, 20vw"
+                  sizes={scrollSizes}
                 />
               </div>
             ))}
@@ -76,7 +84,7 @@ export default function ImageRow({
                   label={image.label}
                   alt={image.alt}
                   className={imageClassName}
-                  sizes="(max-width: 640px) 88vw, 384px"
+                  sizes="(max-width: 640px) 68vw, 320px"
                 />
               </div>
             ))}

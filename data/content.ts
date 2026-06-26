@@ -14,12 +14,6 @@ export type MenuItemData = {
   imageSrc?: string;
 };
 
-export type PastaMenuCategory = {
-  titleHr: string;
-  titleEn: string;
-  items: MenuItemData[];
-};
-
 export const imageAssets = {
   heroImage: {
     src: "/images/hero.jpg",
@@ -28,76 +22,26 @@ export const imageAssets = {
   },
   firstRowImages: [
     {
-      src: "/images/frfi.JPG",
+      src: "/images/frsi.JPG",
       alt: "First row image 1",
       label: "First row image 1"
     },
     {
-      src: "/images/frsi.JPG",
+      src: "/images/frti.jpg",
       alt: "First row image 2",
       label: "First row image 2"
     },
     {
-      src: "/images/frti.jpg",
+      src: "/images/fr4i.jpg",
       alt: "First row image 3",
       label: "First row image 3"
     },
     {
-      src: "/images/fr4i.jpg",
+      src: "/images/fr5i.jpg",
       alt: "First row image 4",
       label: "First row image 4"
-    },
-    {
-      src: "/images/fr5i.jpg",
-      alt: "First row image 5",
-      label: "First row image 5"
     }
   ] as ImageAsset[],
-  pastaRowImages: [
-    {
-      src: "/images/pr1i.JPG",
-      alt: "Handmade pasta detail 1",
-      label: "Pasta image 1"
-    },
-    {
-      src: "/images/pr2i.JPG",
-      alt: "Handmade pasta detail 2",
-      label: "Pasta image 2"
-    },
-    {
-      src: "/images/pr3i.jpg",
-      alt: "Handmade pasta detail 3",
-      label: "Pasta image 3"
-    },
-    {
-      src: "/images/pr4i.jpg",
-      alt: "Handmade pasta detail 4",
-      label: "Pasta image 4"
-    },
-    {
-      src: "/images/pr5i.jpg",
-      alt: "Handmade pasta detail 5",
-      label: "Pasta image 5"
-    }
-  ] as ImageAsset[],
-  pastaPageRowImages: [
-    {
-      src: "/images/ps1i.jpg",
-      alt: "Pasta menu image 1",
-      label: "Pasta menu image 1"
-    },
-    {
-      src: "/images/ps2i.jpg",
-      alt: "Pasta menu image 2",
-      label: "Pasta menu image 2"
-    },
-    {
-      src: "/images/ps3i.jpg",
-      alt: "Pasta menu image 3",
-      label: "Pasta menu image 3"
-    }
-  ] as ImageAsset[],
-  pastaVideo: "/images/pasta-hero.mp4",
   artOfStradoonImage: {
     src: "/images/The art of.jpg",
     alt: "The Art of Stradoon",
@@ -140,34 +84,22 @@ export const imageAssets = {
 export const homepageContent = {
   heroSubtitle: "Welcome",
   heroTitle: "Martini & Restaurant",
-  introHeadingHr: "Martini & Pasta bar u Dubrovniku",
-  introHeadingEn: "Martini & Pasta bar in Dubrovnik",
+  introHeadingHr: "Martini Bar & Restoran",
+  introHeadingEn: "Martini Bar & Restaurant",
   introTextHr:
-    "Mjesto gdje se povijest susreće s modernim užitkom. Od prvih jutarnjih zraka sunca na Stradunu do elegantnih večeri uz Martini i ručno rađenu tjesteninu, dobrodošli u naš svijet.",
+    "Mjesto gdje se povijest susreće s modernim užitkom. Od prvih jutarnjih zraka sunca na Stradunu do elegantnih večeri uz Martini, dobrodošli u naš svijet.",
   introTextEn:
-    "A place where history meets modern pleasure. From the first morning rays of sun on Stradun to elegant evenings with Martinis and hand-crafted pasta, welcome to our world.",
+    "A place where history meets modern pleasure. From the first morning rays of sun on Stradoon to elegant evenings with Martini, welcome to our world.",
   artOfStradoonHeading: "The Art of",
   artOfStradoonHeadingAccent: "Stradoon",
   artOfStradoonTextHr: [
     "Stradoon nije samo adresa, već tradicija koja se neprestano razvija. Kao prvi Martini bar u Hrvatskoj i omiljeno okupljalište s pogledom na crkvu sv. Vlaha, godinama gradimo priču temeljenu na iznimnoj lokaciji i beskompromisnoj kvaliteti.",
-    "Danas, Stradoon stoji na pragu nove ere. Spajajući modernu gastronomiju i vrhunske namirnice, specijalizirali smo se za ranojutarnje rituale kroz naš Breakfast Couture koncept. Kako dan prelazi u noć, naša kulinarska priča nastavlja se ručno rađenom, Italijom inspiriranom tjesteninom i signature Martini koktelima koji su postali simbol dubrovačkih večeri."
+    "Danas, Stradoon stoji na pragu nove ere. Spajajući modernu gastronomiju i vrhunske namirnice, specijalizirali smo se za ranojutarnje rituale kroz naš Breakfast Couture koncept te signature Martini koktele koji su postali simbol dubrovačkih večeri. Naš restoran je mjesto gdje se susreću elegancije i opuštenosti."
   ],
   artOfStradoonTextEn: [
     "Stradoon is not just an address, but a tradition that constantly evolves. As the first Martini bar in Croatia and a beloved gathering spot with a view of St. Blaise's Church, we have been building a story based on an exceptional location and uncompromising quality for years.",
-    "Today, Stradoon stands at the threshold of a new era. Combining modern gastronomy and premium ingredients, we have specialized in early morning rituals through our Breakfast Couture concept. As day turns to night, our culinary story continues with handmade, Italy-inspired pasta and signature Martini cocktails that have become a symbol of Dubrovnik evenings."
+    "Today, Stradoon stands at the threshold of a new era. Combining modern gastronomy and premium ingredients, we have specialized in early morning rituals through our Breakfast Couture concept and signature Martini cocktails that have become a symbol of Dubrovnik evenings. Our restaurant is a place where elegance meets relaxation."
   ],
-  pastaSectionHeadingHr: "Inspirirana Italijom, ručno rađena u Dubrovniku",
-  pastaSectionHeadingEn: "Inspired by Italy, Handmade in Dubrovnik",
-  pastaSectionTitleHr: "Ručno rađena tjestenina",
-  pastaSectionTitleEn: "Handmade pasta",
-  pastaSectionTextHr:
-    "Inspirirana Italijom, stvorena ručno. Svakoga dana pretvaramo vrhunske talijanske sastojke u svježu, tjesteninu napravljenu u našoj kuhinji. Podignite doživljaj večere na novu razinu i isprobajte prepoznatljivi specijalitet napravljen i poslužen izravno iz bogatog koluta sira, istinski kulinarski ritual koji nosi samu srž talijanske tradicije.",
-  pastaSectionTextEn:
-    "Inspired by Italy, crafted by hand. Every day, we transform premium Italian ingredients into fresh, silky pasta made from scratch. Elevate your dining experience and try our signature selection tossed and served directly from a rich wheel of cheese, a true culinary ritual that captures the essence of tradition.",
-  pastaMenuIntroHr:
-    "Okusi Italije u srcu Dubrovnika. Ručno rađena tjestenina i specijalna jela servirana iz koluta sira. Istraži meni i prepusti se gastronomskom putovanju.",
-  pastaMenuIntroEn:
-    "The flavors of Italy in the heart of Dubrovnik. Handmade pasta and specialty dishes served from a wheel of cheese. Explore the menu and indulge in a gastronomic journey.",
   contactHeading: "Find us:",
   email: "stradoon@juznivjetar.com",
   phone: "+385 99 3388 276"
@@ -254,83 +186,6 @@ export const breakfastMenuItems: MenuItemData[] = [
       "Domaća granola poslužena s grčkim jogurtom, sezonskim voćem i medom.",
     enDescription:
       "Homemade granola served with Greek yogurt, seasonal fruit and honey."
-  }
-];
-
-export const pastaMenuCategories: PastaMenuCategory[] = [
-  {
-    titleHr: "Predjela",
-    titleEn: "Starters",
-    items: [
-      {
-        name: "Prosciutto crudo & mozzarella di bufala",
-        price: "21 €",
-        hrDescription:
-          "Pršut crudo, mozzarella di bufala, domaći pesto Genovese, pinjoli, sušene rajčice, rikola i Parmigiano Reggiano.",
-        enDescription:
-          "Prosciutto crudo, mozzarella di bufala, homemade Genovese pesto, pine nuts, dehydrated tomatoes, arugula and Parmigiano Reggiano."
-      },
-      {
-        name: "Caprese s dimljenom provolom",
-        nameHr: "Caprese s dimljenom provolom",
-        nameEn: "Caprese with smoked provola cheese",
-        price: "18 €",
-        hrDescription:
-          "Svježa dimljena provola, rajčica, rikola, domaći pesto Genovese, pinjoli i maslinovo ulje.",
-        enDescription:
-          "Fresh smoked provola cheese, tomatoes, arugula, homemade Genovese pesto, pine nuts and olive oil."
-      },
-      {
-        name: "Selekcija sireva",
-        nameHr: "Selekcija sireva",
-        nameEn: "Cheese selection",
-        price: "28 €",
-        hrDescription:
-          "Selekcija talijanskih i lokalnih sireva, poslužena s orašastim plodovima, suhim voćem i domaćim dodacima.",
-        enDescription:
-          "A selection of Italian and local cheeses served with nuts, dried fruits and house accompaniments."
-      }
-    ]
-  },
-  {
-    titleHr: "Domaća tjestenina",
-    titleEn: "Homemade Pasta",
-    items: [
-      {
-        name: "Tagliatelle cacio e pepe",
-        price: "22 €",
-        hrDescription: "Pecorino Romano, Parmigiano Reggiano i svježe mljeveni crni papar.",
-        enDescription: "Pecorino Romano, Parmigiano Reggiano and freshly cracked black pepper."
-      },
-      {
-        name: "Pappardelle al pesto Genovese",
-        price: "23 €",
-        hrDescription: "Domaći pesto od bosiljka, Parmigiano Reggiano, pinjoli i maslinovo ulje.",
-        enDescription: "Homemade basil pesto, Parmigiano Reggiano, pine nuts and olive oil."
-      },
-      {
-        name: "Spaghetti alla carbonara",
-        price: "24 €",
-        hrDescription: "Guanciale, Pecorino Romano, Parmigiano Reggiano, jaja i crni papar.",
-        enDescription: "Guanciale, Pecorino Romano, Parmigiano Reggiano, eggs and black pepper."
-      },
-      {
-        name: "Ravioli ricotta & špinat alla Bolognese",
-        price: "26 €",
-        hrDescription:
-          "Domaći ravioli punjeni ricottom i špinatom, tradicionalni bolognese ragù, Parmigiano Reggiano i svježi bosiljak.",
-        enDescription:
-          "Homemade ravioli filled with ricotta and spinach, traditional Bolognese ragù, Parmigiano Reggiano and fresh basil."
-      },
-      {
-        name: "Ravioli quattro formaggi s umakom od oraha",
-        price: "25 €",
-        hrDescription:
-          "Ravioli s četiri vrste sira u kremastom umaku od oraha, završeni Parmigiano Reggianom i svježim origanom.",
-        enDescription:
-          "Four cheese ravioli in a creamy walnut sauce, finished with Parmigiano Reggiano and fresh oregano."
-      }
-    ]
   }
 ];
 
