@@ -26,9 +26,9 @@ const snell = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://stradoon.com"),
-  title: "Stradoon | Breakfast, Handmade Pasta & Martini Bar",
+  title: "Stradoon | Breakfast & Martini Bar",
   description:
-    "Stradoon in Dubrovnik delivers an elegant Mediterranean dining experience with handmade pasta and refined breakfast creations.",
+    "Start your day with an elegant breakfast and enjoy expertly crafted Martinis in the heart of Dubrovnik.",
   icons: {
     icon: "/images/stradoon-mini-logo.jpg",
     shortcut: "/images/stradoon-mini-logo.jpg",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     siteName: "Stradoon",
     title: "Stradoon | Breakfast, Handmade Pasta & Martini Bar",
     description:
-      "Stradoon in Dubrovnik delivers an elegant Mediterranean dining experience with handmade pasta and refined breakfast creations.",
+      "Start your day with an elegant breakfast and enjoy expertly crafted Martinis in the heart of Dubrovnik.",
     images: [
       {
         url: "/images/stradoon-mini-logo.jpg",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: "Stradoon | Breakfast, Handmade Pasta & Martini Bar",
     description:
-      "Stradoon in Dubrovnik delivers an elegant Mediterranean dining experience with handmade pasta and refined breakfast creations.",
+      "Start your day with an elegant breakfast and enjoy expertly crafted Martinis in the heart of Dubrovnik.",
     images: ["/images/stradoon-mini-logo.jpg"]
   }
 };
