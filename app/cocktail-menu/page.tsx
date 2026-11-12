@@ -5,6 +5,7 @@ import HeroBanner from "@/components/HeroBanner";
 import ScriptHeading from "@/components/ScriptHeading";
 import { cocktailMenuItems, cocktailMenuContent } from "@/data/content";
 import { useLanguage } from "@/components/LanguageContext";
+import { MenuDownload, MenuPrice } from "@/components/MenuPrice";
 
 function MenuCategory({ title, items, language, textColor = "ivory" }: { title: string; items: typeof cocktailMenuItems; language: "hr" | "en"; textColor?: string }) {
   const textClass = textColor === "dark" ? "text-deepText" : "text-ivory";
@@ -35,9 +36,12 @@ function MenuCategory({ title, items, language, textColor = "ivory" }: { title: 
                 {language === "hr" ? item.hrDescription : item.enDescription}
               </p>
             </div>
-            <p className={`text-sm font-semibold sm:whitespace-nowrap ${textClass} md:text-base`}>
-              {item.price}
-            </p>
+            <MenuPrice
+              price={item.price}
+              anchorPrice={item.anchorPrice}
+              tone={textColor === "dark" ? "dark" : "light"}
+              size="sm"
+            />
           </div>
         ))}
       </div>
@@ -51,9 +55,9 @@ export default function CocktailMenuPage() {
 
   const brunchItems = cocktailMenuItems.slice(0, 6);
   const nonAlcoholItems = cocktailMenuItems.slice(6, 8);
-  const bondBarItems = cocktailMenuItems.slice(8, 22);
-  const shootersItems = cocktailMenuItems.slice(22, 26);
-  const virginItems = cocktailMenuItems.slice(26, 30);
+  const bondBarItems = cocktailMenuItems.slice(8, 23);
+  const shootersItems = cocktailMenuItems.slice(23, 27);
+  const virginItems = cocktailMenuItems.slice(27);
 
   return (
     <>
@@ -135,6 +139,12 @@ export default function CocktailMenuPage() {
             <MenuCategory title={lang === "hr" ? "Šuteri" : "Shooters"} items={shootersItems} language={lang} />
             <MenuCategory title={lang === "hr" ? "Bezalkoholni" : "Virgin"} items={virginItems} language={lang} />
           </div>
+        </div>
+      </section>
+
+      <section className="bg-ivory pb-12 md:pb-16">
+        <div className="container-elegant">
+          <MenuDownload />
         </div>
       </section>
     </>

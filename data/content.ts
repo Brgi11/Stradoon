@@ -9,6 +9,7 @@ export type MenuItemData = {
   nameHr?: string;
   nameEn?: string;
   price: string;
+  anchorPrice: string;
   hrDescription: string;
   enDescription: string;
   imageSrc?: string;
@@ -109,6 +110,7 @@ export const breakfastMenuItems: MenuItemData[] = [
   {
     name: "FALAFEL FIESTA",
     price: "€ 13.00",
+    anchorPrice: "€ 12.00",
     imageSrc: "/images/1. Falafel Fiesta.jpg",
     hrDescription:
       "Veganska zdjela koja se sastoji od slanutkovih kuglica, baby špinata, kvinoje, mrkve, avokada, crvenog kupusa, zapečenog slanutka, rajčice, krastavaca, humusa od cikle, sezamovih sjemenki i šipka.",
@@ -118,6 +120,7 @@ export const breakfastMenuItems: MenuItemData[] = [
   {
     name: "SIZZLE SHAKSHUKA",
     price: "€ 14.00",
+    anchorPrice: "€ 13.00",
     imageSrc: "/images/2. Sizzle Shakshuka.jpg",
     hrDescription:
       "Shakshuka od paprike, crvenog luka, baby špinata, maslina, feta sira, zapečenog slanutka te na samom vrhu servirano prženo jaje.",
@@ -127,6 +130,7 @@ export const breakfastMenuItems: MenuItemData[] = [
   {
     name: "OMELET OF THE GODS",
     price: "€ 14.50",
+    anchorPrice: "€ 13.00",
     imageSrc: "/images/3. Omlet of the Gods.jpg",
     hrDescription:
       "Omlet poslužen s rikulom, parmezanom, preljevom od jogurta i maslacem od pinjola.",
@@ -136,6 +140,7 @@ export const breakfastMenuItems: MenuItemData[] = [
   {
     name: "EGGS ROYALE ON BLACK GOLD",
     price: "€ 17.00",
+    anchorPrice: "€ 15.50",
     imageSrc: "/images/4. Eggs Royale on Black Gold.jpg",
     hrDescription:
       "Dimljeni losos poslužen na tostiranom crnom kruhu s poširanim jajima, baby špinatom, hollandaise umakom od tartufa i šipkom.",
@@ -145,6 +150,7 @@ export const breakfastMenuItems: MenuItemData[] = [
   {
     name: "THE TOFU EGGSTRAVAGANZA",
     price: "€ 14.50",
+    anchorPrice: "€ 13.50",
     imageSrc: "/images/5. The Tofu Eggstravaganza.jpg",
     hrDescription:
       "Tostirani crni kruh poslužen s tofu sirom, grilanom pancetom, avokadom i poširanim jajima.",
@@ -154,6 +160,7 @@ export const breakfastMenuItems: MenuItemData[] = [
   {
     name: "THE NUTTY AVOCROISSANT",
     price: "€ 15.00",
+    anchorPrice: "€ 15.00",
     imageSrc: "/images/6. The Nutty Avocroissant.jpg",
     hrDescription:
       "Tostirani kroasan s kremom od avokada, poširanim jajem, rukolom, parmezanom i pinjolima.",
@@ -163,6 +170,7 @@ export const breakfastMenuItems: MenuItemData[] = [
   {
     name: "BANANA PANCAKE PARTY",
     price: "€ 15.00",
+    anchorPrice: "€ 14.00",
     imageSrc: "/images/7. Banana Pancake Party.jpg",
     hrDescription:
       "Palačinke s javorovim sirupom, coulis od malina, karamelizirana banana, sezonsko voće i sladoled od vanilije.",
@@ -172,6 +180,7 @@ export const breakfastMenuItems: MenuItemData[] = [
   {
     name: "HONEY, I'M FLAKY!",
     price: "€ 14.00",
+    anchorPrice: "€ 13.00",
     imageSrc: "/images/8. Honey, I'm Flaky.jpg",
     hrDescription:
       "Kroasan poslužen s maslacem, medom, linoladom i sezonskim voćem.",
@@ -181,6 +190,7 @@ export const breakfastMenuItems: MenuItemData[] = [
   {
     name: "YOGURT & THE GRANOLA GANG",
     price: "€ 13.50",
+    anchorPrice: "€ 12.00",
     imageSrc: "/images/9. Yogurt & Granola Gang.jpg",
     hrDescription:
       "Domaća granola poslužena s grčkim jogurtom, sezonskim voćem i medom.",
@@ -216,186 +226,217 @@ export const cocktailMenuItems: MenuItemData[] = [
   {
     name: "Martini Fiero & Tonic",
     price: "12.00 €",
+    anchorPrice: "10.00 €",
     hrDescription: "Martini Fiero, Schweppes Tonic Water",
     enDescription: "Martini Fiero, Schweppes Tonic Water"
   },
   {
     name: "Mango Sapphire",
     price: "12.00 €",
+    anchorPrice: "13.00 €",
     hrDescription: "Bombay Sapphire Gin, Lime Juice, Homemade Mango-Turmeric and Chilly Syrup, Schweppes Tonic Water",
     enDescription: "Bombay Sapphire Gin, Lime Juice, Homemade Mango-Turmeric and Chilly Syrup, Schweppes Tonic Water"
   },
   {
     name: "Mint Twist",
     price: "12.00 €",
+    anchorPrice: "13.00 €",
     hrDescription: "Finlandia Vodka, Homemade Mint Syrup, Schweppes Tonic Water",
     enDescription: "Finlandia Vodka, Homemade Mint Syrup, Schweppes Tonic Water"
   },
   {
     name: "Stradoon Mimosa",
     price: "12.00 €",
+    anchorPrice: "12.00 €",
     hrDescription: "Orange Juice, Martini Prosecco",
     enDescription: "Orange Juice, Martini Prosecco"
   },
   {
     name: "Hugo",
     price: "14.00 €",
+    anchorPrice: "14.00 €",
     hrDescription: "St. Germain Elderflower Liqueur, Lime, Mint, Martini Prosecco",
     enDescription: "St. Germain Elderflower Liqueur, Lime, Mint, Martini Prosecco"
   },
   {
     name: "Aperol Spritz",
     price: "14.00 €",
+    anchorPrice: "14.00 €",
     hrDescription: "Martini Prosecco, Aperol, Splash Soda",
     enDescription: "Martini Prosecco, Aperol, Splash Soda"
   },
   {
     name: "Floreale Tonic",
     price: "10.00 €",
+    anchorPrice: "10.00 €",
     hrDescription: "Martini Floreale, Schweppes Tonic Water",
     enDescription: "Martini Floreale, Schweppes Tonic Water"
   },
   {
     name: "Vibrante Tonic",
     price: "10.00 €",
+    anchorPrice: "10.00 €",
     hrDescription: "Martini Vibrante, Schweppes Tonic Water",
     enDescription: "Martini Vibrante, Schweppes Tonic Water"
   },
   {
     name: "Espresso Martini",
     price: "14.50 €",
+    anchorPrice: "16.00 €",
     hrDescription: "Finlandia Vodka, Kahlua, Shot Espresso, Honey",
     enDescription: "Finlandia Vodka, Kahlua, Shot Espresso, Honey"
   },
   {
     name: "Martini Royale",
     price: "14.00 €",
+    anchorPrice: "15.00 €",
     hrDescription: "Bombay Sapphire Gin/Finlandia Vodka, Martini Extra Dry, Olives",
     enDescription: "Bombay Sapphire Gin/Finlandia Vodka, Martini Extra Dry, Olives"
   },
   {
     name: "The Bondhattan",
     price: "16.00 €",
+    anchorPrice: "16.50 €",
     hrDescription: "Woodford Reserve Bourbon, Martini Rosso, Dash Angostura",
     enDescription: "Woodford Reserve Bourbon, Martini Rosso, Dash Angostura"
   },
   {
     name: "Angostura Negroni",
     price: "15.00 €",
+    anchorPrice: "16.00 €",
     hrDescription: "Bombay Sapphire Gin, Martini Riserva Speciale Bitter, Martini Rosso, Dash Angostura",
     enDescription: "Bombay Sapphire Gin, Martini Riserva Speciale Bitter, Martini Rosso, Dash Angostura"
   },
   {
     name: "Ocho Old Fashioned",
     price: "15.00 €",
+    anchorPrice: "16.00 €",
     hrDescription: "Bacardi Reserva Ocho Gold Rum, Cardamom, Dash Angostura",
     enDescription: "Bacardi Reserva Ocho Gold Rum, Cardamom, Dash Angostura"
   },
   {
     name: "The Vesper Mule",
     price: "13.50 €",
+    anchorPrice: "15.50 €",
     hrDescription: "Bacardi Carta Oro Rum, Lime Juice, Three Cents Ginger Beer",
     enDescription: "Bacardi Carta Oro Rum, Lime Juice, Three Cents Ginger Beer"
   },
   {
     name: "The Greenfinger",
     price: "14.00 €",
+    anchorPrice: "15.50 €",
     hrDescription: "Bombay Sapphire Gin, Lime, St. Germain Elderflower Liqueur, Basil, Lime Juice",
     enDescription: "Bombay Sapphire Gin, Lime, St. Germain Elderflower Liqueur, Basil, Lime Juice"
   },
   {
     name: "Cucumber Confidential",
     price: "13.50 €",
+    anchorPrice: "14.00 €",
     hrDescription: "Finlandia Vodka, Lemon Juice, Sugar, Mint, Cucumber, Soda",
     enDescription: "Finlandia Vodka, Lemon Juice, Sugar, Mint, Cucumber, Soda"
   },
   {
     name: "The Bondito Mule",
     price: "14.00 €",
+    anchorPrice: "15.00 €",
     hrDescription: "El Jimador Blanco Tequila, Lime Juice, Agave Syrup, Three Cents Ginger Beer",
     enDescription: "El Jimador Blanco Tequila, Lime Juice, Agave Syrup, Three Cents Ginger Beer"
   },
   {
     name: "The Bondstar Martini",
     price: "15.00 €",
+    anchorPrice: "16.00 €",
     hrDescription: "Finlandia Vodka, Passion Fruit Puree, Passoa, Lime Juice, Vanilla Syrup, Martini Prosecco",
     enDescription: "Finlandia Vodka, Passion Fruit Puree, Passoa, Lime Juice, Vanilla Syrup, Martini Prosecco"
   },
   {
     name: "The Margarita Protocol",
     price: "14.00 €",
+    anchorPrice: "15.00 €",
     hrDescription: "El Jimador Blanco Tequila, Cointreau, Lime Juice, Agave Syrup",
     enDescription: "El Jimador Blanco Tequila, Cointreau, Lime Juice, Agave Syrup"
   },
   {
     name: "The Mojito Reactor",
     price: "14.00 €",
+    anchorPrice: "14.50 €",
     hrDescription: "Bacardi Carta Blanca Rum, Lime, Brown Sugar, Mint, Splash Soda",
     enDescription: "Bacardi Carta Blanca Rum, Lime, Brown Sugar, Mint, Splash Soda"
   },
   {
     name: "Paloma on the Run",
     price: "14.00 €",
+    anchorPrice: "15.00 €",
     hrDescription: "Patron Silver Tequila, Lime Juice, Three Cents Pink Grapefruit Soda",
     enDescription: "Patron Silver Tequila, Lime Juice, Three Cents Pink Grapefruit Soda"
   },
   {
     name: " Daiquiri 007",
     price: "14.50 €",
+    anchorPrice: "15.00 €",
     hrDescription: "Bacardi Carta Blanca Rum, Lime, Sugar",
     enDescription: "Bacardi Carta Blanca Rum, Lime, Sugar"
   },
   {
     name: "Agent Bourbon",
     price: "16.00 €",
+    anchorPrice: "16.50 €",
     hrDescription: "Woodford Reserve Bourbon, Lemon Juice, Simple Syrup, Egg White",
     enDescription: "Woodford Reserve Bourbon, Lemon Juice, Simple Syrup, Egg White"
   },
   {
     name: "B-52",
     price: "8.00 €",
+    anchorPrice: "8.00 €",
     hrDescription: "Bailey's, Kahlua, Stroh",
     enDescription: "Bailey's, Kahlua, Stroh"
   },
   {
     name: "Kamikaze",
     price: "8.00 €",
+    anchorPrice: "8.00 €",
     hrDescription: "Finlandia Vodka, Cointreau, Lime Juice",
     enDescription: "Finlandia Vodka, Cointreau, Lime Juice"
   },
   {
     name: "Lemon Drop",
     price: "8.00 €",
+    anchorPrice: "8.00 €",
     hrDescription: "Finlandia Vodka, Lemon Juice, Sugar Syrup",
     enDescription: "Finlandia Vodka, Lemon Juice, Sugar Syrup"
   },
   {
     name: "Slippery Nipple",
     price: "8.00 €",
+    anchorPrice: "8.00 €",
     hrDescription: "Sambuca, Bailey's, Grenadine",
     enDescription: "Sambuca, Bailey's, Grenadine"
   },
   {
     name: "Virgin Floreale Tonic",
     price: "10.00 €",
+    anchorPrice: "10.00 €",
     hrDescription: "Martini Floreale, Schweppes Tonic Water",
     enDescription: "Martini Floreale, Schweppes Tonic Water"
   },
   {
     name: "Virgin Vibrante Tonic",
     price: "10.00 €",
+    anchorPrice: "10.00 €",
     hrDescription: "Martini Vibrante, Schweppes Tonic Water",
     enDescription: "Martini Vibrante, Schweppes Tonic Water"
   },
   {
     name: "Virgin Mojito",
     price: "10.00 €",
+    anchorPrice: "10.00 €",
     hrDescription: "Sprite, Lime, Passion Puree, Mint",
     enDescription: "Sprite, Lime, Passion Puree, Mint"
   },
   {
     name: "Cinderella",
     price: "10.00 €",
+    anchorPrice: "10.00 €",
     hrDescription: "Orange Juice, Pineapple Juice, Lemon Juice, Grenadine, Three Cents Ginger Beer",
     enDescription: "Orange Juice, Pineapple Juice, Lemon Juice, Grenadine, Three Cents Ginger Beer"
   }

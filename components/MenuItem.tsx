@@ -1,6 +1,7 @@
 import type { MenuItemData } from "@/data/content";
 import Image from "next/image";
 import { useLanguage } from "@/components/LanguageContext";
+import { MenuPrice } from "@/components/MenuPrice";
 
 type MenuItemProps = {
   item: MenuItemData;
@@ -16,9 +17,9 @@ export default function MenuItem({ item, index, showImage = true }: MenuItemProp
   if (!showImage) {
     return (
       <article className="border-b border-primaryRed/25 py-5 last:border-b-0">
-        <div className="mb-2 flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+        <div className="mb-2 flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
           <h3 className="break-words text-lg font-semibold tracking-wide text-primaryRed md:text-xl">{displayName}</h3>
-          <p className="text-base font-semibold text-deepText md:text-lg">{item.price}</p>
+          <MenuPrice price={item.price} anchorPrice={item.anchorPrice} />
         </div>
         <p className="text-[15px] leading-relaxed text-deepText/95 md:text-base">
           {language === "hr" ? item.hrDescription : item.enDescription}
@@ -43,9 +44,9 @@ export default function MenuItem({ item, index, showImage = true }: MenuItemProp
         </div>
 
         <div className={reverseLayout ? "md:order-1" : ""}>
-          <div className="mb-3 flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+          <div className="mb-3 flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
             <h3 className="break-words text-lg font-semibold tracking-wide text-primaryRed md:text-2xl">{displayName}</h3>
-            <p className="text-base font-semibold text-deepText md:text-xl">{item.price}</p>
+            <MenuPrice price={item.price} anchorPrice={item.anchorPrice} size="lg" />
           </div>
           <p className="text-[15px] leading-relaxed text-deepText/95 md:text-base">
             {language === "hr" ? item.hrDescription : item.enDescription}

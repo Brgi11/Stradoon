@@ -1,5 +1,6 @@
 import type { MenuItemData } from "@/data/content";
 import MenuItem from "@/components/MenuItem";
+import { MenuDownload } from "@/components/MenuPrice";
 
 type MenuListProps = {
   items: MenuItemData[];
@@ -13,6 +14,7 @@ export default function MenuList({ items }: MenuListProps) {
           {items.map((item, index) => (
             <MenuItem key={item.name} item={item} index={index} />
           ))}
+          <MenuDownload />
         </div>
       </div>
     </section>
