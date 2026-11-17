@@ -119,7 +119,7 @@ export const breakfastMenuItems: MenuItemData[] = [
   },
   {
     name: "SIZZLE SHAKSHUKA",
-    price: "€ 14.00",
+    price: "€ 13.00",
     anchorPrice: "€ 13.00",
     imageSrc: "/images/2. Sizzle Shakshuka.jpg",
     hrDescription:
@@ -129,7 +129,7 @@ export const breakfastMenuItems: MenuItemData[] = [
   },
   {
     name: "OMELET OF THE GODS",
-    price: "€ 14.50",
+    price: "€ 13.00",
     anchorPrice: "€ 13.00",
     imageSrc: "/images/3. Omlet of the Gods.jpg",
     hrDescription:
@@ -139,7 +139,7 @@ export const breakfastMenuItems: MenuItemData[] = [
   },
   {
     name: "EGGS ROYALE ON BLACK GOLD",
-    price: "€ 17.00",
+    price: "€ 15.50",
     anchorPrice: "€ 15.50",
     imageSrc: "/images/4. Eggs Royale on Black Gold.jpg",
     hrDescription:
@@ -149,7 +149,7 @@ export const breakfastMenuItems: MenuItemData[] = [
   },
   {
     name: "THE TOFU EGGSTRAVAGANZA",
-    price: "€ 14.50",
+    price: "€ 13.50",
     anchorPrice: "€ 13.50",
     imageSrc: "/images/5. The Tofu Eggstravaganza.jpg",
     hrDescription:
@@ -169,7 +169,7 @@ export const breakfastMenuItems: MenuItemData[] = [
   },
   {
     name: "BANANA PANCAKE PARTY",
-    price: "€ 15.00",
+    price: "€ 14.00",
     anchorPrice: "€ 14.00",
     imageSrc: "/images/7. Banana Pancake Party.jpg",
     hrDescription:
@@ -179,7 +179,7 @@ export const breakfastMenuItems: MenuItemData[] = [
   },
   {
     name: "HONEY, I'M FLAKY!",
-    price: "€ 14.00",
+    price: "€ 13.00",
     anchorPrice: "€ 13.00",
     imageSrc: "/images/8. Honey, I'm Flaky.jpg",
     hrDescription:
@@ -189,7 +189,7 @@ export const breakfastMenuItems: MenuItemData[] = [
   },
   {
     name: "YOGURT & THE GRANOLA GANG",
-    price: "€ 13.50",
+    price: "€ 12.00",
     anchorPrice: "€ 12.00",
     imageSrc: "/images/9. Yogurt & Granola Gang.jpg",
     hrDescription:
@@ -225,7 +225,7 @@ export const cocktailMenuContent = {
 export const cocktailMenuItems: MenuItemData[] = [
   {
     name: "Martini Fiero & Tonic",
-    price: "12.00 €",
+    price: "10.00 €",
     anchorPrice: "10.00 €",
     hrDescription: "Martini Fiero, Schweppes Tonic Water",
     enDescription: "Martini Fiero, Schweppes Tonic Water"
@@ -281,14 +281,14 @@ export const cocktailMenuItems: MenuItemData[] = [
   },
   {
     name: "Espresso Martini",
-    price: "14.50 €",
+    price: "16.00 €",
     anchorPrice: "16.00 €",
     hrDescription: "Finlandia Vodka, Kahlua, Shot Espresso, Honey",
     enDescription: "Finlandia Vodka, Kahlua, Shot Espresso, Honey"
   },
   {
     name: "Martini Royale",
-    price: "14.00 €",
+    price: "15.00 €",
     anchorPrice: "15.00 €",
     hrDescription: "Bombay Sapphire Gin/Finlandia Vodka, Martini Extra Dry, Olives",
     enDescription: "Bombay Sapphire Gin/Finlandia Vodka, Martini Extra Dry, Olives"
@@ -302,7 +302,7 @@ export const cocktailMenuItems: MenuItemData[] = [
   },
   {
     name: "Angostura Negroni",
-    price: "15.00 €",
+    price: "16.00 €",
     anchorPrice: "16.00 €",
     hrDescription: "Bombay Sapphire Gin, Martini Riserva Speciale Bitter, Martini Rosso, Dash Angostura",
     enDescription: "Bombay Sapphire Gin, Martini Riserva Speciale Bitter, Martini Rosso, Dash Angostura"
@@ -379,7 +379,7 @@ export const cocktailMenuItems: MenuItemData[] = [
   },
   {
     name: "Agent Bourbon",
-    price: "16.00 €",
+    price: "16.50 €",
     anchorPrice: "16.50 €",
     hrDescription: "Woodford Reserve Bourbon, Lemon Juice, Simple Syrup, Egg White",
     enDescription: "Woodford Reserve Bourbon, Lemon Juice, Simple Syrup, Egg White"

@@ -13,13 +13,15 @@ type NavItemType = {
   labelEn: string;
   href?: string;
   isReserve?: boolean;
+  quiet?: boolean;
 };
 
 const navItems: NavItemType[] = [
   { labelHr: "Meni Doručak", labelEn: "Breakfast Menu", href: "/breakfast-menu" },
   { labelHr: "Kokteli", labelEn: "Cocktail Menu", href: "/cocktail-menu" },
   { labelHr: "Rezerviraj", labelEn: "Reserve", isReserve: true },
-  { labelHr: "Kontakt", labelEn: "Contact Us", href: "/#contact" }
+  { labelHr: "Kontakt", labelEn: "Contact Us", href: "/#contact" },
+  { labelHr: "Cjenik - sidrene cijene", labelEn: "Price list - anchor prices", href: "/cjenik", quiet: true }
 ];
 
 const socialItems = [
@@ -171,14 +173,14 @@ export default function Header() {
           </div>
 
           <nav aria-label="Mobile navigation">
-            <ul className="space-y-4 text-xl">
+            <ul className="space-y-4">
               {navItems.map((item, idx) => (
                 <li key={idx}>
                   {item.isReserve ? (
                     <button
                       type="button"
                       onClick={() => handleNavClick(item)}
-                      className="block w-full border-b border-ivory/25 pb-3 text-left transition hover:text-ivory/80"
+                      className="block w-full border-b border-ivory/25 pb-3 text-left text-xl transition hover:text-ivory/80"
                     >
                       {getNavLabel(item)}
                     </button>
@@ -186,7 +188,11 @@ export default function Header() {
                     <Link
                       href={item.href || "/"}
                       onClick={() => handleNavClick(item)}
-                      className="block border-b border-ivory/25 pb-3 transition hover:text-ivory/80"
+                      className={
+                        item.quiet
+                          ? "mt-1 inline-flex rounded-md border border-ivory/55 px-3 py-1.5 text-sm tracking-wide text-ivory/85 transition hover:bg-ivory hover:text-primaryRed"
+                          : "block border-b border-ivory/25 pb-3 text-xl transition hover:text-ivory/80"
+                      }
                     >
                       {getNavLabel(item)}
                     </Link>

@@ -34,8 +34,8 @@ export function MenuDownload() {
   return (
     <div className="mt-12 flex justify-center md:mt-16">
       <a
-        href="/downloads/stradoon-dubrovnik-sidrene-cijene-17.11.csv"
-        download="Stradoon Dubrovnik, Sidrene cijene 17.11.csv"
+        href="/downloads/57470495260_BISTRO-SLASTICARNICA_STRADOON_PLACA-6-DUBROVNIK_JV1_USLUGE_0001_20261117_SSMM.csv"
+        download="57470495260_BISTRO-SLASTICARNICA_STRADOON_PLACA-6-DUBROVNIK_JV1_USLUGE_0001_20261117_SSMM.csv"
         className="inline-flex items-center justify-center rounded-full border border-ivory/80 bg-primaryRed px-6 py-3 text-center text-sm uppercase tracking-[0.12em] text-ivory shadow-[inset_0_1px_0_rgba(255,255,255,0.22),0_3px_12px_rgba(0,0,0,0.2)] transition hover:-translate-y-0.5 hover:bg-[#8f2d2c] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primaryRed focus-visible:ring-offset-2 focus-visible:ring-offset-ivory"
       >
         {language === "hr" ? "Preuzmi meni (CSV)" : "Download menu (CSV)"}
